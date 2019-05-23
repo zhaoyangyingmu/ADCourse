@@ -1,12 +1,47 @@
 {
-  "pages":[
+  "pages": [
+    "pages/find/find",
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/personal/personal",
+    "pages/study/study",
+    "pages/system/system"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#515151",
+    "selectedColor": "#2980B9",
+    "borderStyle": "black",
+    "list": [
+      {
+        "selectedIconPath": "static/images/study_selected.png",
+        "iconPath": "static/images/study.png",
+        "pagePath": "pages/study/study",
+        "text": "学习"
+      },
+      {
+        "selectedIconPath": "static/images/find_selected.png",
+        "iconPath": "static/images/find.png",
+        "pagePath": "pages/find/find",
+        "text": "发现"
+      },
+      {
+        "selectedIconPath": "static/images/system_selected.png",
+        "iconPath": "static/images/system.png",
+        "pagePath": "pages/system/system",
+        "text": "系统"
+      },
+      {
+        "selectedIconPath": "static/images/personal_selected.png",
+        "iconPath": "static/images/personal.png",
+        "pagePath": "pages/personal/personal",
+        "text": "个人"
+      }
+    ]
   }
 }
