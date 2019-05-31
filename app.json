@@ -16,7 +16,7 @@
   "tabBar": {
     "color": "#dedee0",
     "selectedColor": "#ff9933",
-    "borderStyle": "#eee",
+    "borderStyle": "black",
     "list": [
       {
         "selectedIconPath": "static/images/ic_list_selected.png",
