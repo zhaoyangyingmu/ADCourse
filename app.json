@@ -14,31 +14,31 @@
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
-    "color": "#515151",
-    "selectedColor": "#2980B9",
-    "borderStyle": "black",
+    "color": "#dedee0",
+    "selectedColor": "#ff9933",
+    "borderStyle": "#eee",
     "list": [
       {
-        "selectedIconPath": "static/images/study_selected.png",
-        "iconPath": "static/images/study.png",
+        "selectedIconPath": "static/images/ic_list_selected.png",
+        "iconPath": "static/images/ic_list.png",
         "pagePath": "pages/study/study",
         "text": "学习"
       },
       {
-        "selectedIconPath": "static/images/find_selected.png",
-        "iconPath": "static/images/find.png",
+        "selectedIconPath": "static/images/ic_discover_selected.png",
+        "iconPath": "static/images/ic_discover.png",
         "pagePath": "pages/find/find",
         "text": "发现"
       },
       {
-        "selectedIconPath": "static/images/system_selected.png",
-        "iconPath": "static/images/system.png",
+        "selectedIconPath": "static/images/ic_notice_selected.png",
+        "iconPath": "static/images/ic_notice.png",
         "pagePath": "pages/system/system",
         "text": "系统"
       },
       {
-        "selectedIconPath": "static/images/personal_selected.png",
-        "iconPath": "static/images/personal.png",
+        "selectedIconPath": "static/images/ic_home_selected.png",
+        "iconPath": "static/images/ic_home.png",
         "pagePath": "pages/personal/personal",
         "text": "个人"
       }
