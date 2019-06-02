@@ -17,7 +17,5 @@
   },
   "homepage": "https://github.com/DarkYoung/ADCourse#readme",
   "dependencies": {
-    "rxjs-wx": "^1.1.1",
-    "vant-weapp": "^0.5.14"
   }
 }

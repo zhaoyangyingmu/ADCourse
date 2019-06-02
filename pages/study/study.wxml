@@ -1,2 +1,3 @@
 <!--pages/study/study.wxml-->
 <text>pages/study/study.wxml</text>
+<van-button type='primary'>按钮</van-button>
