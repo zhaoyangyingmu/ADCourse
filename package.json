@@ -1,0 +1,21 @@
+{
+  "name": "adcourse",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DarkYoung/ADCourse.git"
+  },
+  "author": "谢东方、张健、陈涛、陈雷远",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DarkYoung/ADCourse/issues"
+  },
+  "homepage": "https://github.com/DarkYoung/ADCourse#readme",
+  "dependencies": {
+  }
+}
