@@ -1,3 +1,13 @@
 <!--pages/study/study.wxml-->
-<text>pages/study/study.wxml</text>
-<van-button type='primary'>按钮</van-button>
+<import src="../common/header.wxml"/>
+<import src="../common/footer.wxml"/>
+<view class="container">
+    <template is="header" data="{{title:'Study'}}"/>
+    <view class="page-body">
+        <view class="page-body-wrapper">
+            <text>pages/study/study.wxml</text>
+            <van-button type='primary'>按钮</van-button>
+        </view>
+    </view>
+    <template is="footer"/>
+</view>

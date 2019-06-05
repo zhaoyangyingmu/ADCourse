@@ -1,1 +1,109 @@
-/* pages/personal/personal.wxss */
+.container {
+    background: #f7f7f6;
+}
+
+.page-body-wrapper {
+    padding-top: 30rpx;
+}
+
+.profile-info-container {
+    position: relative;
+    margin: 0 30rpx 30rpx 30rpx;
+    border-radius: 30rpx;
+    background-image: url(https://cdn.nlark.com/yuque/0/2019/jpeg/285274/1552962631985-assets/web-upload/bdd4700f-cd0f-4665-a27e-494b08c9b336.jpeg?x-oss-process=image/resize,w_285);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.profile-info {
+    display: flex;
+    justify-content: space-around;
+    padding: 80rpx 60rpx;
+    border-bottom: 2rpx solid #f7f7f6;
+}
+
+.profile-detail{
+    max-width: 60%;
+}
+.profile-name {
+    font-size: 1.5rem;
+    font-style: bolder;
+    line-height: 1.8rem;
+    white-space: nowrap;
+    color: white;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.profile-id {
+    font-size: 0.8rem;
+    color: #eee;
+}
+
+.profile-avatar {
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.profile-analysis-container {
+    padding: 30rpx;
+}
+
+.profile-item-container {
+    width: 50%;
+    height: 100%;
+    display: inline-block;
+    text-align: center;
+}
+
+.profile-item {
+    font-size: 1.3rem;
+    font-style: boloder;
+    color: white;
+}
+
+.profile-item-unit {
+    font-size: 0.6rem;
+    color: #ddd;
+}
+
+.profile-item-title {
+    font-size: 0.9rem;
+    color: #eee;
+}
+
+.profile-service-container {
+    display: flex;
+    margin: 0 30rpx 30rpx 30rpx;
+    padding: 40rpx 0;
+    justify-content: space-around;
+    border-radius: 30rpx;
+    background: white;
+}
+
+.profile-service-item:last-child {
+    border-left: 1rpx solid #ddd;
+}
+
+.profile-service-item {
+    position: relative;
+    display: inline-block;
+    width: 50%;
+    height: 100%;
+    margin: auto 10rpx;
+    text-align: center;
+}
+
+.profile-service-icon {
+    width: 80rpx;
+    height: 80rpx;
+}
+
+.profile-service-title {
+    display: inline-block;
+    font-size: 1rem;
+    margin: auto 20rpx;
+    transform: translateY(-50%);
+}

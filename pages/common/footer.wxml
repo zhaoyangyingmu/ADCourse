@@ -1,0 +1,5 @@
+<template name="footer">
+    <view class="page-footer">
+        慕课学习
+    </view>
+</template>
