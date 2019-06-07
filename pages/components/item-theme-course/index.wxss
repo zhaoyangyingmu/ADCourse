@@ -1,0 +1,20 @@
+.item-mine {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    margin: auto 10rpx;
+    text-align: center;
+}
+
+.item-mine-icon {
+    width: 80rpx;
+    height: 80rpx;
+}
+
+.item-mine-title{
+    display: inline-block;
+    font-size: 1rem;
+    margin: auto 20rpx;
+    transform: translateY(-50%);
+}

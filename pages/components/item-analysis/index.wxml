@@ -1,0 +1,5 @@
+<view class='item-container'>
+    <text class='item-value'>{{value}}</text>
+    <text class='item-unit'>/{{unit}}</text>
+    <view class='item-title'>{{title}}</view>
+</view>

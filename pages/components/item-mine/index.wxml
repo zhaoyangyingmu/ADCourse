@@ -1,0 +1,4 @@
+<view class='item-container' bind:tap='onNavigateTo' data-target='{{target}}'>
+    <image src='{{icon}}' class='item-icon'></image>
+    <text class='item-title'>{{title}}</text>
+</view>
