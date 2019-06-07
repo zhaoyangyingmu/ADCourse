@@ -13,28 +13,12 @@
                 </view>
                 <!-- 学习分析 -->
                 <view class='profile-analysis-container'>
-                    <view class='profile-item-container'>
-                        <text class='profile-item'>{{score}}</text>
-                        <text class='profile-item-unit'>/分</text>
-                        <view class='profile-item-title'>累计学分</view>
-                    </view>
-                    <view class='profile-item-container'>
-                        <text class='profile-item'>{{course}}</text>
-                        <text class='profile-item-unit'>/门</text>
-                        <view class='profile-item-title'>参与课程</view>
-                    </view>
+                    <item-analysis wx:for='{{analysis}}'  wx:key='index' value='{{item.value}}' unit='{{item.unit}}' title='{{item.title}}'></item-analysis>
                 </view>
             </view>
             <!-- 功能模块：我的笔记、我的收藏 -->
             <view class='profile-service-container card-shadow'>
-                <view class='profile-service-item'>
-                    <image src='../../static/images/ic_task_completed.png' class='profile-service-icon'></image>
-                    <text class='profile-service-title'>我的笔记</text>
-                </view>
-                <view class='profile-service-item'>
-                    <image src='../../static/images/ic_like_selected.png' class='profile-service-icon'></image>
-                    <text class='profile-service-title'>我的收藏</text>
-                </view>
+                <item-mine wx:for='{{mine}}'  wx:key='index' icon='{{item.icon}}' title='{{item.title}}' target='{{item.target}}'></item-mine>
             </view>
         </view>
     </view>
