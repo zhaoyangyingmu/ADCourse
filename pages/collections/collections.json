@@ -1,3 +1,5 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "collection_item": "./collection_item/collection_item"
+  }
 }

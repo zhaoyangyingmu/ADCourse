@@ -2,3 +2,7 @@
 <view>
 find
 </view>
+
+<view>
+  <wxc-toast is-show="{{true}}" text="成功"></wxc-toast>
+</view>

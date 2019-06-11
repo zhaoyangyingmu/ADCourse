@@ -1,3 +1,5 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "wxc-toast": "../../dist/packages/@minui/wxc-toast/dist/index"
+  }
 }
