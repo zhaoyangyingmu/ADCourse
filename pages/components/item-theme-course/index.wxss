@@ -1,20 +1,18 @@
-.item-mine {
+.item-container {
     position: relative;
     display: inline-block;
     width: 100%;
     height: 100%;
-    margin: auto 10rpx;
     text-align: center;
+    overflow: hidden;
 }
-
-.item-mine-icon {
-    width: 80rpx;
-    height: 80rpx;
-}
-
-.item-mine-title{
-    display: inline-block;
-    font-size: 1rem;
-    margin: auto 20rpx;
-    transform: translateY(-50%);
+.item-container text{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 5rpx;
+    background: #FC6F33;
+    color: white;
+    font-size: 0.5rem;
+    border-radius: 0 0 0 10rpx;
 }

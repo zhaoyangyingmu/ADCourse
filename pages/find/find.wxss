@@ -1,1 +1,10 @@
-/* pages/find/find.wxss */
+@import "/colorui/main.wxss";
+@import "/colorui/icon.wxss";
+
+.card-swiper {
+    height: 380rpx !important;
+}
+
+.course-container {
+    
+}
