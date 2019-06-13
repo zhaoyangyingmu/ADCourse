@@ -34,3 +34,21 @@ page {
                 5rpx 0rpx 25rpx #eee,
                 0rpx 5rpx 25rpx #eee;
 }
+
+/* 一级标题 */
+
+.title1 {
+    font-size: 1.3rem;
+    font-style: bolder;
+    line-height: 1.5rem;
+    color: black;
+}
+
+/* 二级标题 */
+
+.title2 {
+    font-size: 1rem;
+    font-style: bolder;
+    line-height: 1.2rem;
+    color: black;
+}

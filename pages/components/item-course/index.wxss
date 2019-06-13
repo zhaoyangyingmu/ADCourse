@@ -1,20 +1,31 @@
-.item-mine {
+.item-container {
     position: relative;
-    display: inline-block;
     width: 100%;
+    height: 360rpx;
+    max-height: 360rpx;
+    min-height: 360rpx;
+    margin: 20rpx auto;
+}
+
+.item-container image {
+    display: block;
+    max-width: 100%;
     height: 100%;
-    margin: auto 10rpx;
-    text-align: center;
+    margin: 0 auto;
+    border-radius: 25rpx;
+    overflow: hidden;
 }
 
-.item-mine-icon {
-    width: 80rpx;
-    height: 80rpx;
-}
-
-.item-mine-title{
-    display: inline-block;
-    font-size: 1rem;
-    margin: auto 20rpx;
-    transform: translateY(-50%);
+.item-desc {
+    position: absolute;
+    min-width: 180rpx;
+    height: min-content;
+    bottom: 20rpx;
+    left: 50rpx;
+    padding: 0 15rpx;
+    background: #fbecea;
+    border-radius: 25rpx;
+    box-shadow: 5rpx 5rpx 50rpx rgba(0, 0, 0, 0.5);
+        color: #6b5850;
+        font-size: .6rem;
 }
