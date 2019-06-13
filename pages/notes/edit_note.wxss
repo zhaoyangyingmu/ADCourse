@@ -1,0 +1,43 @@
+/* pages/notes/edit_note.wxss */
+
+.panel{
+  width: 600rpx;
+  height: 950rpx;
+  background-color: rgb(250,247,238);
+  display: block;
+  padding: 40rpx;
+  border-radius: 20rpx;
+  margin: 30rpx auto;
+}
+
+
+.card-shadow {
+  font-size: 0.9em;
+  margin-bottom: 30rpx;
+  color: rgb(176, 169, 151);
+  background-color: rgb(241, 235, 223);
+  padding: 10rpx 20rpx;
+}
+
+.text_content {
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 15rpx;
+  margin: 30rpx 15rpx 15rpx 15rpx;
+  border-radius: 10rpx;
+  height: 750rpx;
+}
+
+.submit_button {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.submit_button text {
+  border: solid rgba(100, 93, 64, 0.7) 2rpx;
+  background-color: rgb(209, 203,189);
+  padding: 10rpx 40rpx;
+  margin-top: 20rpx;
+  border-radius: 10rpx;
+  color: #4a4a4a;
+}

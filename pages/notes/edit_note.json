@@ -1,6 +1,5 @@
 {
   "usingComponents": {
-    "collection_item": "./collection_item/collection_item",
     "item_header": "../components/item_header/item_header"
   }
 }

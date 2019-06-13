@@ -1,17 +1,18 @@
 {
   "pages": [
-    "pages/find/find",                      
+    "pages/find/find",
     "pages/index/index",
-    "pages/logs/logs",                      
-    "pages/personal/personal",           
-    "pages/study/study",                    
-    "pages/system/system",               
-    "pages/course/course",                 
-    "pages/chatroom/chatroom",       
-    "pages/test/test",                         
-    "pages/notes/notes",                     
-    "pages/collections/collections",   
-    "pages/themecourses/themecourses"
+    "pages/logs/logs",
+    "pages/personal/personal",
+    "pages/study/study",
+    "pages/system/system",
+    "pages/course/course",
+    "pages/chatroom/chatroom",
+    "pages/test/test",
+    "pages/notes/notes",
+    "pages/collections/collections",
+    "pages/themecourses/themecourses",
+    "pages/notes/edit_note"
   ],
   "window": {
     "backgroundTextStyle": "light",

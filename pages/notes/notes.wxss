@@ -1,1 +1,19 @@
 /* pages/notes/notes.wxss */
+.note_body {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  width: 650rpx;
+  height: 1100rpx;
+  margin: auto;
+}
+
+.note_item {
+  display: inline-block;
+}
+
+.note_index {
+  text-align: center;
+  color: rgb(215,215,215);
+}

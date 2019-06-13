@@ -1,0 +1,42 @@
+/* pages/components/item_section/item_section.wxss */
+
+.item_section {
+  width: 530rpx;
+  height: 850rpx;
+  background-color: rgb(250,247,238);
+  margin: 50rpx 30rpx;
+  display: inline-block;
+  padding: 40rpx;
+  border-radius: 20rpx;
+}
+
+.note_type {
+  font-size: 0.9em;
+  margin-bottom: 30rpx;
+  color: rgb(176, 169, 151);
+  background-color: rgb(241, 235, 223);
+  padding: 10rpx 20rpx;
+}
+
+.section_content {
+  margin: 20rpx 0rpx;
+  padding: 5rpx 10rpx;
+}
+
+.section_name {
+  font-size: 1.2em;
+  color: rgb(94,98,73);
+  font-weight: bold;
+}
+
+.summary {
+  margin-top: 15rpx;
+  color: rgb(193,177,161);
+}
+
+.card-shadow {
+    box-shadow: 0rpx -5rpx 25rpx #eee,
+                -5rpx 0rpx 25rpx #eee,
+                5rpx 0rpx 25rpx #eee,
+                0rpx 5rpx 25rpx #eee;
+}

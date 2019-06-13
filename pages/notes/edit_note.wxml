@@ -1,0 +1,15 @@
+<!--pages/notes/edit_note.wxml-->
+<view class='container'>
+  <item_header header="编辑笔记"></item_header>
+  <view class='panel card-shadow' data-url="{{url}}">
+      <form bindsubmit='submit'>
+        <view class='text_content'>
+          <textarea name="content" maxlength='700' 
+          value="{{content}}" bindinput='changeContent' placeholder='我的肝真好！'></textarea>
+        </view>
+        <view class='submit_button'>
+          <text  bindtap='submit'>提交</text>
+        </view>
+      </form>
+  </view>
+</view>

@@ -1,0 +1,9 @@
+<!--pages/components/item_section/item_section.wxml-->
+<view class='item_section card-shadow'>
+  <text class='note_type'>小节</text>
+  <view class='section_content'>
+    <text class="section_name">{{name}}</text>
+    <view class='summary'>{{summary}}</view>
+  </view>
+  <item_note content="{{note_content}}" url="{{url}}"></item_note>
+</view>

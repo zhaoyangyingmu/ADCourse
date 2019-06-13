@@ -1,2 +1,26 @@
 <!--pages/notes/notes.wxml-->
-<text>pages/notes/notes.wxml</text>
+<view class='container'>
+  <item_header header="我的笔记({{notes.length}})"></item_header>
+  <scroll-view scroll-x="true" class='note_body'>
+    <view wx:for="{{notes}}" class='note_item'>
+      <view wx:if="{{item.note_type=='section'}}">
+        <item_section id="{{item.id}}" name="{{item.name}}" 
+            summary="{{item.summary}}" order_number="{{item.order_number}}"
+             chapter_id="{{item.chapter_id}}" note_content="{{item.note_content}}"
+              url="{{item.url}}"></item_section>
+      </view>
+      <view wx:if="{{item.note_type=='knowledge'}}">
+        <item_knowledge id="{{item.id}}" type="{{item.type}}" 
+               content="{{item.content}}" section_id="{{item.section_id}}"
+                importance_degree="{{item.importance_degree}}" 
+                note_content="{{item.note_content}}" 
+                url="{{item.url}}"></item_knowledge>
+      </view>
+
+      <view class='note_index'>
+        {{index + 1}} / {{notes.length}}
+      </view>
+    </view>
+  </scroll-view>
+
+</view>

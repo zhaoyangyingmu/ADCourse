@@ -1,0 +1,8 @@
+<!--pages/components/item_knowledge/item_knowledge.wxml-->
+<view class='item_knowledge card-shadow'>
+  <view class='knowledge'>
+    <text>知识点</text>
+    <view class='knowledge_content'>{{content}}</view>
+  </view>
+  <item_note content="{{note_content}}" url="{{url}}"></item_note>
+</view>

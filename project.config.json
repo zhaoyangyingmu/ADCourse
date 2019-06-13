@@ -41,12 +41,27 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 0,
+			"current": 2,
 			"list": [
 				{
 					"id": -1,
 					"name": "profile",
 					"pathName": "pages/personal/personal",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "notes",
+					"pathName": "pages/notes/notes",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "edit_note",
+					"pathName": "pages/notes/edit_note",
+					"query": "url=/section/3&content=鲁迅的话很有道理！",
 					"scene": null
 				}
 			]
