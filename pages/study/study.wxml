@@ -2,6 +2,6 @@
 <view class="container">
     <view class="page-body">
         <view class="title1 margin-left-lg">我的课程</view>
-        <item-to-learning wx:for="{{courseList}}" wx:key url="{{url}}" status="{{status}}" time="{{time}}" target="{{target}}"></item-to-learning>
+        <item-to-learning wx:for="{{courseList}}" wx:key="id" url="{{item.url}}" status="{{item.status}}" time="{{item.time}}" target="{{item.target}}"></item-to-learning>
     </view>
 </view>

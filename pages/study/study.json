@@ -1,6 +1,6 @@
 {
     "usingComponents": {
-        "item-to-learnning": "../components/item-to-learning",
+        "item-to-learning": "../components/item-to-learning",
         "van-button": "vant-weapp/button"
     }
 }
