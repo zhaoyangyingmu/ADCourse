@@ -1,4 +1,9 @@
-<view class='item-mine' bind:tap='onNavigateTo' data-target='{{target}}'>
-    <image src='{{icon}}' class='item-mine-icon'></image>
-    <text class='item-mine-title'>{{title}}</text>
+<view class="item-container"  bind:tap='onNavigateTo' data-target='{{target}}'>
+    <image src="{{url}}" mode="aspectFill"></image>
+    <view class='item-desc'>
+        <!-- <text class='item-price-unit'>{{unit}}</text>
+        <text class='item-price'>{{price}}</text> |  -->
+        <text>{{date}}</text>
+        <text>{{todo}}</text>
+    </view>
 </view>

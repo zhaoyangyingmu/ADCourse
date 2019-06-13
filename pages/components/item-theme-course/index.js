@@ -1,12 +1,12 @@
 Component({
     properties: {
-        icon: {
+        url: {
             type: String,
-            value: '../static/icon/ic_task.png'
+            value: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big25011.jpg'
         },
-        title: {
+        tag: {
             type: String,
-            value: '我的'
+            value: '精选主题'
         },
         target: {
             type: String,

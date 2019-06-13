@@ -1,12 +1,24 @@
 Component({
     properties: {
-        icon: {
+        url: {
             type: String,
-            value: '../static/icon/ic_task.png'
+            value: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big25011.jpg'
         },
-        title: {
+        price: {
             type: String,
-            value: '我的'
+            value: '0.0'
+        },
+        unit: {
+            type: String,
+            value: '￥'
+        },
+        date: {
+            type: String,
+            value: ''
+        },
+        todo: {
+            type: String,
+            value: '开学'
         },
         target: {
             type: String,
