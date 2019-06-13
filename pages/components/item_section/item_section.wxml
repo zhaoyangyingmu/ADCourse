@@ -6,4 +6,5 @@
     <view class='summary'>{{summary}}</view>
   </view>
   <item_note content="{{note_content}}" url="{{url}}"></item_note>
+  <item_delete_note_button url="{{url}}"></item_delete_note_button>
 </view>

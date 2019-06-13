@@ -1,6 +1,7 @@
 {
   "component": true,
   "usingComponents": {
-    "item_note":"../item_note/item_note"
+    "item_note":"../item_note/item_note",
+    "item_delete_note_button": "../item_delete_note_button/item_delete_note_button"
   }
 }
