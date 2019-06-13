@@ -1,10 +1,8 @@
 .item-container {
     position: relative;
     width: 100%;
-    height: 360rpx;
-    max-height: 360rpx;
-    min-height: 360rpx;
-    margin: 20rpx auto;
+    height: 300rpx;
+    margin: 25rpx auto;
 }
 
 .item-container image {
@@ -26,6 +24,6 @@
     background: #fbecea;
     border-radius: 25rpx;
     box-shadow: 5rpx 5rpx 50rpx rgba(0, 0, 0, 0.5);
-        color: #6b5850;
-        font-size: .6rem;
+    color: #6b5850;
+    font-size: 0.6rem;
 }

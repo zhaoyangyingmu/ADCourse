@@ -12,7 +12,8 @@
     "pages/notes/notes",
     "pages/collections/collections",
     "pages/themecourses/themecourses",
-    "pages/notes/edit_note"
+    "pages/notes/edit_note",
+    "pages/timeline/timeline"
   ],
   "window": {
     "backgroundTextStyle": "light",

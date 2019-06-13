@@ -88,19 +88,13 @@ Page({
             }]
         }, {
             name: "互联网",
-            courseList: [{
-
-            }]
+            courseList: []
         }, {
             name: "生活",
-            courseList: [{
-
-            }]
+            courseList: []
         }, {
             name: "自我",
-            courseList: [{
-
-            }]
+            courseList: []
         }]
     },
     DotStyle(e) {

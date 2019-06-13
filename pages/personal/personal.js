@@ -12,6 +12,7 @@ Page({
         name: 'Dark Young',
         id: '无',
         avatar: '../../static/images/avatar.jpg',
+        gender: 'female',
         analysis: [{
             value: '10',
             unit: '分',

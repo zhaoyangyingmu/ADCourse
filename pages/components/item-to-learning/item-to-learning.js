@@ -1,22 +1,18 @@
+// pages/components/item-to-learnning.js
 Component({
+    /**
+     * 组件的属性列表
+     */
     properties: {
         url: {
             type: String,
-            value: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big25011.jpg'
-        },
-        price: {
-            type: String,
-            value: '0.0'
-        },
-        unit: {
-            type: String,
-            value: '￥'
-        },
-        date: {
-            type: String,
             value: ''
         },
-        todo: {
+        status: {
+            type: Number,
+            value: 1
+        },
+        time: {
             type: String,
             value: ''
         },
@@ -25,9 +21,17 @@ Component({
             value: '.'
         }
     },
+
+    /**
+     * 组件的初始数据
+     */
     data: {
 
     },
+
+    /**
+     * 组件的方法列表
+     */
     methods: {
         onNavigateTo: function(event) {
             const {
@@ -38,4 +42,4 @@ Component({
             })
         }
     }
-});
+})

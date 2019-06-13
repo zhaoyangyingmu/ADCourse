@@ -4,8 +4,6 @@
             <swiper class="card-swiper square-dot" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500" bindchange="cardSwiper" indicator-color="#8799a3" indicator-active-color="#FF9933">
                 <swiper-item wx:for="{{swiperList}}" wx:key="index" class="{{cardCur==index?'cur':''}}">
                     <view class="swiper-item">
-                        <!-- <image src="{{item.url}}" mode="aspectFill" wx:if="{{item.type=='image'}}"></image>
-            <video src="{{item.url}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover" wx:if="{{item.type=='video'}}"></video> -->
                         <item-theme url="{{item.url}}" tag="{{item.tag}}" target="{{item.target}}"></item-theme>
                     </view>
                 </swiper-item>
@@ -15,7 +13,7 @@
             <van-tabs animated swipeable color="#FF9933" line-width="25">
                 <van-tab wx:for="{{categoryList}}" wx:key="index" wx:for-item="category" title="{{category.name}}">
                     <view class='course-container margin-left-lg margin-right-lg'>
-                        <item-course wx:for="{{category.courseList}}" wx:for-item="course" wx:key="id" url='{{course.url}}' date='{{course.date}}' target='{{course.target}}'></item-course>
+                        <item-course class='card-shadow' wx:for="{{category.courseList}}" wx:for-item="course" wx:key="id" url='{{course.url}}' date='{{course.date}}' target='{{course.target}}'></item-course>
                     </view>
                 </van-tab>
             </van-tabs>

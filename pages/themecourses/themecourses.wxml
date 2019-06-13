@@ -1,2 +1,5 @@
-<!--pages/themecourses/themecourses.wxml-->
-<text>pages/themecourses/themecourses.wxml</text>
+<view class='container'>
+    <view class='page-body'>
+        <image></image>
+    </view>
+</view>

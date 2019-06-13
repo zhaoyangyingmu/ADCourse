@@ -9,16 +9,18 @@
                         <view class='profile-name'>{{name}}</view>
                         <text class='profile-id'>学号：{{id}}</text>
                     </view>
-                    <image src='{{avatar}}' class='profile-avatar'></image>
+                    <view class="cu-avatar round lg margin-left" style='background-image:url({{avatar}});'>
+                        <view class="cu-tag badge {{gender!='male'?'cuIcon-female bg-pink':'cuIcon-male bg-blue'}}"></view>
+                    </view>
                 </view>
                 <!-- 学习分析 -->
                 <view class='profile-analysis-container'>
-                    <item-analysis wx:for='{{analysis}}'  wx:key='index' value='{{item.value}}' unit='{{item.unit}}' title='{{item.title}}'></item-analysis>
+                    <item-analysis wx:for='{{analysis}}' wx:key='index' value='{{item.value}}' unit='{{item.unit}}' title='{{item.title}}'></item-analysis>
                 </view>
             </view>
             <!-- 功能模块：我的笔记、我的收藏 -->
             <view class='profile-service-container card-shadow'>
-                <item-mine wx:for='{{mine}}'  wx:key='index' icon='{{item.icon}}' title='{{item.title}}' target='{{item.target}}'></item-mine>
+                <item-mine wx:for='{{mine}}' wx:key='index' icon='{{item.icon}}' title='{{item.title}}' target='{{item.target}}'></item-mine>
             </view>
         </view>
     </view>
