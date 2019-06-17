@@ -1,2 +1,11 @@
 <!--pages/system/system.wxml-->
-<text>pages/system/system.wxml</text>
+<view class='container'>
+  <item_header header="系统消息" class="header"></item_header>
+
+  <view class="message_body">
+    <item_message wx:for="{{messages}}" 
+         message_type="{{item.message_type}}" title="{{item.title}}"
+         time="{{item.time}}" message="{{item.message}}">
+    </item_message>
+  </view>
+</view>

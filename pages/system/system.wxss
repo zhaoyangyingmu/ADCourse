@@ -1,1 +1,10 @@
 /* pages/system/system.wxss */
+.header {
+  text-align: center !important;
+}
+
+.message_body {
+  width: 95%;
+  height: 87%;
+  margin: 20rpx auto;
+}

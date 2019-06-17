@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "item_header": "../components/item_header/item_header",
+    "item_message": "../components/item_message/item_message"
+  }
 }

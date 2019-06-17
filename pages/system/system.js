@@ -1,18 +1,41 @@
 // pages/system/system.js
+var utils = require("../../utils/util.js");
+var setMessageNumber = utils.setMessageNumber;
+
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    messages: [
+      {
+        message_type: 0,
+        title: "来自鲁迅的消息",
+        message: "组织认为你和优秀啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊！！！！！！！！！！！！",
+        time: "2019-06-17 16: 33"
+      },
+      {
+        message_type: 0,
+        title: "老师消息",
+        message: "准备上课！！！！！！！！！！！！",
+        time: "2019-06-17 16: 33"
+      },
+      {
+        message_type: 0,
+        title: "上课消息",
+        message: "你还有几个期末考需要准备！！！！！！！！！！！！",
+        time: "2019-06-17 16: 33"
+      }
+    ]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    setMessageNumber();
   },
 
   /**
