@@ -1,11 +1,8 @@
 <!--pages/study/study.wxml-->
 <view class="container">
-    <cu-custom></cu-custom>
-    <view class="cu-bar">
-        <view class="action">
-            <text class="title1 text-bold">我的课程</text>
-        </view>
-    </view>
+    <cu-custom bgColor="bg-theme">
+        <view slot="content" class="text-bold text-xl">我的课程</view>
+    </cu-custom>
     <view class="page-body">
         <item-to-learning wx:for="{{courseList}}" wx:key="id" url="{{item.url}}" status="{{item.status}}" time="{{item.time}}" target="{{item.target}}"></item-to-learning>
     </view>

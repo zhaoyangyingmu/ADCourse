@@ -1,5 +1,7 @@
 <view class='container'>
-    <cu-custom></cu-custom>
+    <cu-custom bgColor="bg-theme">
+        <view slot="content" class="text-bold text-xl">个人信息</view>
+    </cu-custom>
     <view class='page-body'>
         <view class='page-body-wrapper'>
             <!-- 个人信息模块 -->

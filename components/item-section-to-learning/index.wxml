@@ -1,0 +1,4 @@
+<view class="item-container"  bind:tap='onNavigateTo' data-target='{{target}}'>
+    <image src="{{url}}" mode="aspectFill"></image>
+    <text>{{tag}}</text>
+</view>
