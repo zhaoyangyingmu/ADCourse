@@ -23,11 +23,11 @@ Page({
             title: '参与课程'
         }],
         mine: [{
-            'icon': '/static/images/ic_task_completed.png',
+            'icon': '/static/icon/ic_task_completed.png',
             'title': '我的笔记',
             'target': '../notes/notes'
         }, {
-            'icon': '/static/images/ic_like_selected.png',
+            'icon': '/static/icon/ic_like_selected.png',
             'title': '我的收藏',
             'target': '../collections/collections'
         }]

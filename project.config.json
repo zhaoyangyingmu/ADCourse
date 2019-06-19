@@ -1,91 +1,97 @@
 {
-	"description": "项目配置文件",
-	"packOptions": {
-		"ignore": []
-	},
-	"setting": {
-		"urlCheck": false,
-		"es6": true,
-		"postcss": true,
-		"minified": true,
-		"newFeature": true,
-		"nodeModules": true,
-		"autoAudits": false,
-		"checkInvalidKey": true
-	},
-	"compileType": "miniprogram",
-	"libVersion": "2.7.0",
-	"appid": "wx74e4dde03e2bbfdc",
-	"projectname": "ADCourse",
-	"debugOptions": {
-		"hidedInDevtools": []
-	},
-	"isGameTourist": false,
-	"simulatorType": "wechat",
-	"simulatorPluginLibVersion": {},
-	"condition": {
-		"search": {
-			"current": -1,
-			"list": []
-		},
-		"conversation": {
-			"current": -1,
-			"list": []
-		},
-		"plugin": {
-			"current": -1,
-			"list": []
-		},
-		"game": {
-			"currentL": -1,
-			"list": []
-		},
-		"miniprogram": {
-			"current": 0,
-			"list": [
-				{
-					"id": 0,
-					"name": "个人界面",
-					"pathName": "pages/personal/personal",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "notes",
-					"pathName": "pages/notes/notes",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "edit_note",
-					"pathName": "pages/notes/edit_note",
-					"query": "url=/section/3&content=鲁迅的话很有道理！",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "发现",
-					"pathName": "pages/find/find",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "学习界面",
-					"pathName": "pages/study/study",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "学习进度",
-					"pathName": "pages/timeline/timeline",
-					"query": "",
-					"scene": null
-				}
-			]
-		}
-	}
+    "description": "项目配置文件",
+    "packOptions": {
+        "ignore": []
+    },
+    "setting": {
+        "urlCheck": false,
+        "es6": true,
+        "postcss": true,
+        "minified": true,
+        "newFeature": true,
+        "nodeModules": true,
+        "autoAudits": false,
+        "checkInvalidKey": true
+    },
+    "compileType": "miniprogram",
+    "libVersion": "2.7.0",
+    "appid": "wx74e4dde03e2bbfdc",
+    "projectname": "ADCourse",
+    "debugOptions": {
+        "hidedInDevtools": []
+    },
+    "isGameTourist": false,
+    "simulatorType": "wechat",
+    "simulatorPluginLibVersion": {},
+    "condition": {
+        "search": {
+            "current": -1,
+            "list": []
+        },
+        "conversation": {
+            "current": -1,
+            "list": []
+        },
+        "plugin": {
+            "current": -1,
+            "list": []
+        },
+        "game": {
+            "currentL": -1,
+            "list": []
+        },
+        "miniprogram": {
+            "current": 0,
+            "list": [
+                {
+                    "id": 0,
+                    "name": "个人界面",
+                    "pathName": "pages/personal/personal",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "notes",
+                    "pathName": "pages/notes/notes",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "edit_note",
+                    "pathName": "pages/notes/edit_note",
+                    "query": "url=/section/3&content=鲁迅的话很有道理！",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "发现",
+                    "pathName": "pages/find/find",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "学习界面",
+                    "pathName": "pages/study/study",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "学习进度",
+                    "pathName": "pages/timeline/timeline",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "system",
+                    "pathName": "pages/system/system",
+                    "scene": null
+                }
+            ]
+        }
+    }
 }

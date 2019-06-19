@@ -1,0 +1,11 @@
+<!--pages/components/item_message/item_message.wxml-->
+<view class='item_message'>
+  <image src='{{image_urls[message_type]}}'></image>
+  <view class='content'>
+    <view class='row'>
+      <view>{{title}}</view>
+      <view>{{time}}</view>
+    </view>
+    <view class='row'>{{message}}</view>
+  </view>
+</view>

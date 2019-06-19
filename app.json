@@ -15,14 +15,26 @@
         "pages/notes/edit_note",
         "pages/timeline/timeline"
     ],
+    "usingComponents": {
+        "cu-custom": "/colorui/components/cu-custom",
+        "item-analysis": "/components/item-analysis/index",
+        "item-course": "/components/item-course/index",
+        "item-mine": "/components/item-mine/index",
+        "item-theme": "/components/item-theme-course/index",
+        "item-to-learning": "/components/item-to-learning/index",
+        "item_delete_note_button": "/components/item_delete_note_button/item_delete_note_button",
+        "item_header": "/components/item_header/item_header",
+        "item_knowledge": "/components/item_knowledge/item_knowledge",
+        "item_message": "/components/item_message/item_message",
+        "item_note": "/components/item_note/item_note",
+        "item_section": "/components/item_section/item_section"
+        
+    },
     "window": {
         "navigationBarBackgroundColor": "#39b54a",
         "navigationBarTitleText": "ADCourse",
         "navigationStyle": "custom",
         "navigationBarTextStyle": "white"
-    },
-    "usingComponents": {
-        "cu-custom": "/colorui/components/cu-custom"
     },
     "tabBar": {
         "color": "#dedee0",
@@ -30,26 +42,26 @@
         "borderStyle": "black",
         "list": [
             {
-                "selectedIconPath": "static/images/ic_list_selected.png",
-                "iconPath": "static/images/ic_list.png",
+                "selectedIconPath": "static/icon/ic_list_selected.png",
+                "iconPath": "static/icon/ic_list.png",
                 "pagePath": "pages/study/study",
                 "text": "学习"
             },
             {
-                "selectedIconPath": "static/images/ic_discover_selected.png",
-                "iconPath": "static/images/ic_discover.png",
+                "selectedIconPath": "static/icon/ic_discover_selected.png",
+                "iconPath": "static/icon/ic_discover.png",
                 "pagePath": "pages/find/find",
                 "text": "发现"
             },
             {
-                "selectedIconPath": "static/images/ic_notice_selected.png",
-                "iconPath": "static/images/ic_notice.png",
+                "selectedIconPath": "static/icon/ic_notice_selected.png",
+                "iconPath": "static/icon/ic_notice.png",
                 "pagePath": "pages/system/system",
                 "text": "系统"
             },
             {
-                "selectedIconPath": "static/images/ic_home_selected.png",
-                "iconPath": "static/images/ic_home.png",
+                "selectedIconPath": "static/icon/ic_home_selected.png",
+                "iconPath": "static/icon/ic_home.png",
                 "pagePath": "pages/personal/personal",
                 "text": "我的"
             }

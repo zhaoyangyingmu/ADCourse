@@ -14,6 +14,17 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
+/**
+ * 用于设置底部信息button的右上角标
+*/
+var setMessageNumber = function() {
+  wx.setTabBarBadge({
+    index: 2,
+    text: '3',
+  });
+}
+
 module.exports = {
-  formatTime: formatTime
+  formatTime: formatTime,
+  setMessageNumber: setMessageNumber
 }
