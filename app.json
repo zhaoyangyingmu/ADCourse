@@ -1,56 +1,59 @@
 {
-  "pages": [
-    "pages/find/find",
-    "pages/index/index",
-    "pages/logs/logs",
-    "pages/personal/personal",
-    "pages/study/study",
-    "pages/system/system",
-    "pages/course/course",
-    "pages/chatroom/chatroom",
-    "pages/test/test",
-    "pages/notes/notes",
-    "pages/collections/collections",
-    "pages/themecourses/themecourses",
-    "pages/notes/edit_note",
-    "pages/timeline/timeline"
-  ],
-  "window": {
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle": "black"
-  },
-  "tabBar": {
-    "color": "#dedee0",
-    "selectedColor": "#ff9933",
-    "borderStyle": "black",
-    "list": [
-      {
-        "selectedIconPath": "static/images/ic_list_selected.png",
-        "iconPath": "static/images/ic_list.png",
-        "pagePath": "pages/study/study",
-        "text": "学习"
-      },
-      {
-        "selectedIconPath": "static/images/ic_discover_selected.png",
-        "iconPath": "static/images/ic_discover.png",
-        "pagePath": "pages/find/find",
-        "text": "发现"
-      },
-      {
-        "selectedIconPath": "static/images/ic_notice_selected.png",
-        "iconPath": "static/images/ic_notice.png",
-        "pagePath": "pages/system/system",
-        "text": "系统"
-      },
-      {
-        "selectedIconPath": "static/images/ic_home_selected.png",
-        "iconPath": "static/images/ic_home.png",
-        "pagePath": "pages/personal/personal",
-        "text": "我的"
-      }
-    ]
-  },
-  "sitemapLocation": "sitemap.json"
+    "pages": [
+        "pages/find/find",
+        "pages/index/index",
+        "pages/logs/logs",
+        "pages/personal/personal",
+        "pages/study/study",
+        "pages/system/system",
+        "pages/course/course",
+        "pages/chatroom/chatroom",
+        "pages/test/test",
+        "pages/notes/notes",
+        "pages/collections/collections",
+        "pages/themecourses/themecourses",
+        "pages/notes/edit_note",
+        "pages/timeline/timeline"
+    ],
+    "window": {
+        "navigationBarBackgroundColor": "#39b54a",
+        "navigationBarTitleText": "ADCourse",
+        "navigationStyle": "custom",
+        "navigationBarTextStyle": "white"
+    },
+    "usingComponents": {
+        "cu-custom": "/colorui/components/cu-custom"
+    },
+    "tabBar": {
+        "color": "#dedee0",
+        "selectedColor": "#ff9933",
+        "borderStyle": "black",
+        "list": [
+            {
+                "selectedIconPath": "static/images/ic_list_selected.png",
+                "iconPath": "static/images/ic_list.png",
+                "pagePath": "pages/study/study",
+                "text": "学习"
+            },
+            {
+                "selectedIconPath": "static/images/ic_discover_selected.png",
+                "iconPath": "static/images/ic_discover.png",
+                "pagePath": "pages/find/find",
+                "text": "发现"
+            },
+            {
+                "selectedIconPath": "static/images/ic_notice_selected.png",
+                "iconPath": "static/images/ic_notice.png",
+                "pagePath": "pages/system/system",
+                "text": "系统"
+            },
+            {
+                "selectedIconPath": "static/images/ic_home_selected.png",
+                "iconPath": "static/images/ic_home.png",
+                "pagePath": "pages/personal/personal",
+                "text": "我的"
+            }
+        ]
+    },
+    "sitemapLocation": "sitemap.json"
 }

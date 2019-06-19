@@ -1,4 +1,8 @@
 <view class='container'>
+    <cu-custom bgColor="bg-white" isBack="{{true}}">
+        <view slot="backText">返回</view>
+        <view slot="content text-bold">课程主题</view>
+    </cu-custom>
     <view class='page-body'>
         <image></image>
     </view>

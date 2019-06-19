@@ -1,4 +1,7 @@
 <view class='container'>
+    <cu-custom>
+        <view slot="content" class="text-bold text-xl">课程</view>
+    </cu-custom>
     <view class='page-body'>
         <view class='theme-container'>
             <swiper class="card-swiper square-dot" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500" bindchange="cardSwiper" indicator-color="#8799a3" indicator-active-color="#FF9933">
@@ -12,7 +15,7 @@
         <view class='category-container'>
             <van-tabs animated swipeable color="#FF9933" line-width="25">
                 <van-tab wx:for="{{categoryList}}" wx:key="index" wx:for-item="category" title="{{category.name}}">
-                    <view class='course-container margin-left-lg margin-right-lg'>
+                    <view class='course-container margin-left-sm margin-right-sm'>
                         <item-course class='card-shadow' wx:for="{{category.courseList}}" wx:for-item="course" wx:key="id" url='{{course.url}}' date='{{course.date}}' target='{{course.target}}'></item-course>
                     </view>
                 </van-tab>

@@ -1,4 +1,5 @@
 <view class='container'>
+    <cu-custom></cu-custom>
     <view class='page-body'>
         <view class='page-body-wrapper'>
             <!-- 个人信息模块 -->

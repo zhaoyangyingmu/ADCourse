@@ -1,5 +1,7 @@
 // pages/study/study.js
 
+const app = getApp();
+
 Page({
 
     /**

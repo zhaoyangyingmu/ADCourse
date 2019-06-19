@@ -33,27 +33,7 @@ Page({
         }]
     },
     getStudentInfo: function() {
-        var observable = Rx.Observable.create(function(observer) {
-            observer.next(1);
-            observer.next(2);
-            observer.next(3);
-            observer.complete();
-        });
-
-        console.log('before subscribe');
-        observable.observeOn(Rx.Scheduler.async) // 本来是同步的，变成了异步
-            .subscribe({
-                next: (value) => {
-                    console.log(value);
-                },
-                error: (err) => {
-                    console.log('Error: ' + err);
-                },
-                complete: () => {
-                    console.log('complete');
-                }
-            });
-        console.log('after subscribe');
+       //TODO
     },
     navigateToTarget: function(event) {
         let target = event.currentTarget.dataset.target;
