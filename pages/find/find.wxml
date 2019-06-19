@@ -1,4 +1,22 @@
-<!--pages/find/find.wxml-->
-<view>
-find
+<view class='container'>
+    <view class='page-body'>
+        <view class='theme-container'>
+            <swiper class="card-swiper square-dot" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500" bindchange="cardSwiper" indicator-color="#8799a3" indicator-active-color="#FF9933">
+                <swiper-item wx:for="{{swiperList}}" wx:key="index" class="{{cardCur==index?'cur':''}}">
+                    <view class="swiper-item">
+                        <item-theme url="{{item.url}}" tag="{{item.tag}}" target="{{item.target}}"></item-theme>
+                    </view>
+                </swiper-item>
+            </swiper>
+        </view>
+        <view class='category-container'>
+            <van-tabs animated swipeable color="#FF9933" line-width="25">
+                <van-tab wx:for="{{categoryList}}" wx:key="index" wx:for-item="category" title="{{category.name}}">
+                    <view class='course-container margin-left-lg margin-right-lg'>
+                        <item-course class='card-shadow' wx:for="{{category.courseList}}" wx:for-item="course" wx:key="id" url='{{course.url}}' date='{{course.date}}' target='{{course.target}}'></item-course>
+                    </view>
+                </van-tab>
+            </van-tabs>
+        </view>
+    </view>
 </view>

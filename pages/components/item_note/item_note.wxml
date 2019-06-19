@@ -1,0 +1,5 @@
+<!--pages/components/item_note/item_note.wxml-->
+<view class='note' data-url="{{url}}" bindtap='toEdit'>
+  <view>笔记</view>
+  <view>{{content}}<image src="/static/images/edit.png"></image></view>
+</view>

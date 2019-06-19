@@ -1,0 +1,58 @@
+.item-container {
+    position: relative;
+    width: 90%;
+    min-height: 360rpx;
+    margin: 25rpx auto;
+    border-radius: 25rpx;
+    overflow: hidden;
+    box-shadow: 0rpx -5rpx 25rpx #eee,
+                -5rpx 0rpx 25rpx #eee,
+                5rpx 0rpx 25rpx #eee,
+                0rpx 5rpx 25rpx #eee;
+}
+
+.item-body {
+    position: relative;
+    width: 100%;
+    height: 320rpx;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.item-body image {
+    min-width: 100%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.item-body.item-completed, .item-body.item-learning {
+    position: relative;
+}
+
+.item-body.item-completed::after, .item-body.item-learning::after {
+    position: absolute;
+    display: table;
+    right: 0;
+    top: 25rpx;
+    height: 1rem;
+    padding: 0 0.2rem;
+    background: white;
+    border-radius: 0.5rem 0 0 0.5rem;
+    color: #555;
+    font-size: 0.5rem;
+}
+
+.item-body.item-completed::after {
+    content: '已完成';
+}
+
+.item-body.item-learning::after {
+    content: '学习中';
+}
+
+.item-footer {
+    position: relative;
+    height: 20%;
+    padding: 25rpx;
+    color: #00B26A;
+}

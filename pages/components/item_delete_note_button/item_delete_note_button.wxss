@@ -1,0 +1,26 @@
+/* pages/components/item_delete_note_button/item_delete_note_button.wxss */
+
+.delete_button {
+  margin: auto;
+  /* display: flex; */
+  /* justify-content: center; */
+  position: absolute;
+  bottom: 30rpx;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.delete_button text {
+  border: solid rgba(100, 93, 64, 0.7) 2rpx;
+  background-color: rgb(209, 203,189);
+  padding: 10rpx 40rpx;
+  margin-top: 20rpx;
+  border-radius: 10rpx;
+  color: #4a4a4a;
+}
+
+/* .wrapper {
+  width: 100%;
+  position: absolute;
+  bottom: 30rpx;
+} */

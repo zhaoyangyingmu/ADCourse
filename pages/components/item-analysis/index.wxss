@@ -1,0 +1,22 @@
+.item-container {
+    width: 50%;
+    height: 100%;
+    display: inline-block;
+    text-align: center;
+}
+
+.item-value {
+    font-size: 1.3rem;
+    font-style: boloder;
+    color: white;
+}
+
+.item-unit {
+    font-size: 0.6rem;
+    color: #ddd;
+}
+
+.item-title {
+    font-size: 0.9rem;
+    color: #eee;
+}

@@ -1,3 +1,8 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+      "item-theme": "../components/item-theme-course",
+      "item-course": "../components/item-course",
+      "van-tab": "vant-weapp/tab",
+      "van-tabs": "vant-weapp/tabs"
+  }
 }

@@ -5,7 +5,15 @@
     "pages/logs/logs",
     "pages/personal/personal",
     "pages/study/study",
-    "pages/system/system"
+    "pages/system/system",
+    "pages/course/course",
+    "pages/chatroom/chatroom",
+    "pages/test/test",
+    "pages/notes/notes",
+    "pages/collections/collections",
+    "pages/themecourses/themecourses",
+    "pages/notes/edit_note",
+    "pages/timeline/timeline"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -40,7 +48,7 @@
         "selectedIconPath": "static/images/ic_home_selected.png",
         "iconPath": "static/images/ic_home.png",
         "pagePath": "pages/personal/personal",
-        "text": "个人"
+        "text": "我的"
       }
     ]
   },

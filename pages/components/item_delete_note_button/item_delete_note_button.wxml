@@ -1,0 +1,6 @@
+<!--pages/components/item_delete_note_button/item_delete_note_button.wxml-->
+<!-- <view class='wrapper'> -->
+  <view class='delete_button'>
+    <text  bindtap='delete'>删除</text> 
+  </view>
+<!-- </view> -->

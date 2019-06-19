@@ -17,5 +17,8 @@
   },
   "homepage": "https://github.com/DarkYoung/ADCourse#readme",
   "dependencies": {
+    "@minui/wxc-toast": "^1.0.9",
+    "rxjs-wx": "^1.1.1",
+    "vant-weapp": "^0.5.14"
   }
 }

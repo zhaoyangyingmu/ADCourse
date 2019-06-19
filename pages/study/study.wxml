@@ -1,3 +1,7 @@
 <!--pages/study/study.wxml-->
-<text>pages/study/study.wxml</text>
-<van-button type='primary'>按钮</van-button>
+<view class="container">
+    <view class="page-body">
+        <view class="title1 margin-left-lg">我的课程</view>
+        <item-to-learning wx:for="{{courseList}}" wx:key="id" url="{{item.url}}" status="{{item.status}}" time="{{item.time}}" target="{{item.target}}"></item-to-learning>
+    </view>
+</view>

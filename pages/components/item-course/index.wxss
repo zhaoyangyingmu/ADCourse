@@ -1,0 +1,29 @@
+.item-container {
+    position: relative;
+    width: 100%;
+    height: 300rpx;
+    margin: 25rpx auto;
+}
+
+.item-container image {
+    display: block;
+    max-width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    border-radius: 25rpx;
+    overflow: hidden;
+}
+
+.item-desc {
+    position: absolute;
+    min-width: 180rpx;
+    height: min-content;
+    bottom: 20rpx;
+    left: 50rpx;
+    padding: 0 15rpx;
+    background: #fbecea;
+    border-radius: 25rpx;
+    box-shadow: 5rpx 5rpx 50rpx rgba(0, 0, 0, 0.5);
+    color: #6b5850;
+    font-size: 0.6rem;
+}

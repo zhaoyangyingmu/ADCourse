@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "item_header": "../components/item_header/item_header",
+    "item_section": "../components/item_section/item_section",
+    "item_knowledge": "../components/item_knowledge/item_knowledge"
+  }
+}

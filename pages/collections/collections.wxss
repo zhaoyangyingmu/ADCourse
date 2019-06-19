@@ -1,0 +1,4 @@
+/* pages/collections/collections.wxss */
+.container {
+    background: #f7f7f6;
+}

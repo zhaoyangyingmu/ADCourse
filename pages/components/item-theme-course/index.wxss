@@ -1,0 +1,18 @@
+.item-container {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    overflow: hidden;
+}
+.item-container text{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 5rpx;
+    background: #FC6F33;
+    color: white;
+    font-size: 0.5rem;
+    border-radius: 0 0 0 10rpx;
+}

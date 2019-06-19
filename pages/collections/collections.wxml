@@ -1,0 +1,7 @@
+<!--pages/collections/collections.wxml-->
+<view class='container'>
+  <item_header header="我的收藏"></item_header>
+  <view class='collection_body'>
+  <collection_item wx:for="{{collections}}" importance_degree="{{item.importance_degree}}" id="{{item.id}}" content="{{item.content}}"></collection_item>
+  </view>
+</view>

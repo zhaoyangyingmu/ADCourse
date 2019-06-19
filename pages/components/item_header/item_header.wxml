@@ -1,0 +1,3 @@
+<!--pages/components/item_header/item_header.wxml-->
+<!-- 作为收藏和笔记的头部 -->
+<view class='top'><text>{{header}}</text></view>

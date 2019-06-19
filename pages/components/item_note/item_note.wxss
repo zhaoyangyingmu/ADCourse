@@ -1,0 +1,22 @@
+/* pages/components/item_note/item_note.wxss */
+.note {
+  margin-top: 40rpx;
+  white-space: normal;
+}
+
+.note view:nth-child(1) {
+  font-size: 1.1em;  
+  color: rgb(110,104,80);
+}
+
+.note view:nth-child(2) {
+  padding: 20rpx;
+  margin-top: 10rpx;
+  color: #8a8a8a;
+}
+
+.note view:nth-child(2) image {
+  width: 35rpx;
+  height: 35rpx;
+  vertical-align: baseline;
+}

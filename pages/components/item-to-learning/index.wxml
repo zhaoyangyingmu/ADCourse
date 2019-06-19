@@ -1,0 +1,8 @@
+<view class="item-container" bind:tap="onNavigateTo" data-target="{{target}}">
+    <view class="item-body  {{status==0?'item-completed':'item-learning'}}">
+        <image class="item-cover" src="{{url}}" mode="aspectFill"></image>
+    </view>
+    <view class="item-footer">
+        {{status==0?"回顾成长提升之路":"继续学习"}}
+    </view>
+</view>
