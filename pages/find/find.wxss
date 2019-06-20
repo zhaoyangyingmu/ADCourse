@@ -4,5 +4,5 @@
 
 .shadow {
     /* border-radius: 30rpx; */
-    box-shadow:  3rpx 2rpx 30rpx rgba(1, 1, 1, 0.1);
-    }
+    box-shadow: 3rpx 2rpx 30rpx rgba(1, 1, 1, 0.1);
+}

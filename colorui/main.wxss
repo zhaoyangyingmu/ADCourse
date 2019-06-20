@@ -12,7 +12,8 @@
 
 page {
     /* Color 可以自定义相关配色 *//* var属性兼容性 --> https://www.caniuse.com/#feat=css-variables *//* 标准色 */
-    --theme:#ff9933;
+    --theme: #f93;
+    --transparent-theme: rgba(255, 152, 51, 0.8);
     --red: #e54d42;
     --orange: #f37b1d;
     --yellow: #fbbd08;
@@ -3336,6 +3337,11 @@ scroll-view.cu-steps .cu-item {
 
 .bg-theme {
     background-color: var(--theme);
+    color: var(--white);
+}
+
+.bg-transparent-theme {
+    background-color: var(--transparent-theme);
     color: var(--white);
 }
 

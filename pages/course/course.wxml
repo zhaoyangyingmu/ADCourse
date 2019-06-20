@@ -1,2 +1,58 @@
-
-hello
+<view class="container">
+    <cu-custom bgColor="bg-transparent-theme" isBack="{{true}}">
+        <view slot="content">{{course.name}}</view>
+    </cu-custom>
+    <view class='page-body'>
+        <view class='head-container padding-lg' style="background:url({{course.imageSrc}}) no-repeat center center;">
+            <view class="head-content cu-list margin-lg">
+                <view class="cu-item">
+                    <view class="cu-avatar round">
+                        <text>{{course.teacherName[0]}}</text>
+                    </view>
+                    <view class="content flex-sub margin-top-lg">
+                        <view class="text-orange text-bold">主讲讲师：{{course.teacherName}}</view>
+                        <view class="text-white text-sm flex">开课时间：{{course.startTime}}</view>
+                        <view class="text-white text-sm flex">结课时间：{{course.endTime}}</view>
+                        <view class="text-white text-sm flex">学分：{{course.credit}}</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class='content-container padding-lg'>
+            <view class="cu-bar bg-white margin-top">
+                <view class="action">
+                    <text class="cuIcon-info text-green"></text>课程介绍
+                </view>
+            </view>
+            <view class="content">{{course.summary}}</view>
+            <view class="cu-bar bg-white margin-top">
+                <view class="action">
+                    <text class="cuIcon-info text-green"></text>章节信息
+                </view>
+            </view>
+            <view class='cu-timeline'>
+                <view wx:for="{{course.chapterList}}" wx:key="index" wx:for-item="chapter">
+                    <view class='cu-item  text-orange'>
+                        <view class='content'>
+                            <view>
+                                <text>【{{chapter.name}}】</text> {{chapter.summary}}
+                            </view>
+                        </view>
+                    </view>
+                    <view class='cu-timeline'>
+                        <view class='cu-item cuIcon-evaluate' wx:for="{{chapter.sectionList}}" wx:key="index" wx:for-item="section">
+                            <view class="content">
+                                <view>
+                                    <text>【{{section.name}}】</text> {{section.summary}}
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class='foot-container padding-lg'>
+            <button class="cu-btn block bg-green margin-tb-sm lg" type="" bindtap='onTake' data-courseId='{{course.id}}'>选课</button>
+        </view>
+    </view>
+</view>

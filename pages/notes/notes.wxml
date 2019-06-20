@@ -1,6 +1,6 @@
 <!--pages/notes/notes.wxml-->
 <view class='container'>
-    <cu-custom bgColor="bg-theme" isBack="{{true}}">
+    <cu-custom bgColor="bg-transparent-theme" isBack="{{true}}">
         <view slot="content" class="text-bold text-xl">我的笔记({{notes.length}})</view>
     </cu-custom>
     <scroll-view scroll-x="true" class='note_body'>

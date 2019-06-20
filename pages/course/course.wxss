@@ -1,1 +1,26 @@
 /* pages/course/course.wxss */
+
+.head-container {
+    min-height: 30vh;
+    z-index: -2;
+}
+
+.head-content {
+    position: relative;
+    margin: auto;
+    padding: 20rpx;
+    background: hsla(0, 0%, 50%, .3);
+    border-radius: 30rpx;
+    overflow: hidden;
+}
+
+.head-content::before {
+    content: ' ';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    filter: blur(20rpx);
+    margin: -30rpx;
+}

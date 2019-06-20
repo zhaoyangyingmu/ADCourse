@@ -1,6 +1,6 @@
 <!--pages/notes/edit_note.wxml-->
 <view class='container'>
-    <cu-custom bgColor="bg-theme" isBack="{{true}}">
+    <cu-custom bgColor="bg-transparent-theme" isBack="{{true}}">
         <view slot="content" class="text-bold text-xl">编辑笔记</view>
     </cu-custom>
   <view class='panel card-shadow' data-url="{{url}}">

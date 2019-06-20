@@ -1,5 +1,5 @@
 <view class='container'>
-    <cu-custom bgColor="bg-theme">
+    <cu-custom bgColor="bg-transparent-theme">
         <view slot="content" class="text-bold text-xl">个人信息</view>
     </cu-custom>
     <view class='page-body'>
