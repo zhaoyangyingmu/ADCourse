@@ -48,44 +48,65 @@ Page({
             name: "推荐",
             courseList: [{
                 id: 0,
-                date: '2019-03-12',
-                todo: '开学',
+                startTime: '2019-03-12',
+                endTime: '2019-06-12',
+                teacherName: '张健',
+                credits: 2,
+                summary: "折磨生出苦难，苦难又会加剧折磨，凡间这无穷的循环，将由我来终结！",
                 url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big84000.jpg',
                 target: '../course/course'
             }, {
                 id: 1,
-                date: '2019-03-12',
-                todo: '开学',
+                startTime: '2019-03-12',
+                endTime: '2019-06-12',
+                teacherName: '张健',
+                credits: 2,
+                summary: "折磨生出苦难，苦难又会加剧折磨，凡间这无穷的循环，将由我来终结！",
                 url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big84001.jpg',
                 target: '../course/course'
             }, {
                 id: 2,
-                date: '2019-03-12',
-                todo: '开学',
+                startTime: '2019-03-12',
+                endTime: '2019-06-12',
+                teacherName: '张健',
+                credits: 2,
+                summary: "折磨生出苦难，苦难又会加剧折磨，凡间这无穷的循环，将由我来终结！",
                 url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big39000.jpg',
                 target: '../course/course'
             }, {
                 id: 3,
-                date: '2019-03-12',
-                todo: '开学',
+                startTime: '2019-03-12',
+                endTime: '2019-06-12',
+                teacherName: '张健',
+                credits: 2,
+                summary: "折磨生出苦难，苦难又会加剧折磨，凡间这无穷的循环，将由我来终结！",
                 url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg',
                 target: '../course/course'
             }, {
                 id: 4,
-                date: '2019-03-12',
-                todo: '开学',
+                startTime: '2019-03-12',
+                endTime: '2019-06-12',
+                teacherName: '张健',
+                credits: 2,
+                summary: "折磨生出苦难，苦难又会加剧折磨，凡间这无穷的循环，将由我来终结！",
                 url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big25011.jpg',
                 target: '../course/course'
             }, {
                 id: 5,
-                date: '2019-03-12',
-                todo: '开学',
+                startTime: '2019-03-12',
+                endTime: '2019-06-12',
+                teacherName: '张健',
+                credits: 2,
+                summary: "折磨生出苦难，苦难又会加剧折磨，凡间这无穷的循环，将由我来终结！",
                 url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big21016.jpg',
                 target: '../course/course'
             }, {
                 id: 6,
-                date: '2019-03-12',
-                todo: '开学',
+                startTime: '2019-03-12',
+                endTime: '2019-06-12',
+                teacherName: '张健',
+                credits: 2,
+                summary: "折磨生出苦难，苦难又会加剧折磨，凡间这无穷的循环，将由我来终结！",
                 url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big99008.jpg',
                 target: '../course/course'
             }]
@@ -164,6 +185,14 @@ Page({
                 swiperList: list
             })
         }
+    },
+    onNavigateTo: function(event) {
+        const {
+            target
+        } = event.currentTarget.dataset;
+        wx.navigateTo({
+            url: `${target}`,
+        })
     },
     /**
      * 生命周期函数--监听页面加载

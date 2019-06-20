@@ -18,7 +18,6 @@
     "usingComponents": {
         "cu-custom": "/colorui/components/cu-custom",
         "item-analysis": "/components/item-analysis/index",
-        "item-course": "/components/item-course/index",
         "item-mine": "/components/item-mine/index",
         "item-theme": "/components/item-theme-course/index",
         "item-to-learning": "/components/item-to-learning/index",

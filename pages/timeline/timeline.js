@@ -44,6 +44,46 @@ Page({
                         "summary": "简介",
                         "orderNumber": 3,
                         "chapterId": 1
+                    }, {
+                        "id": 1,
+                        "name": "第一节",
+                        "summary": "简介",
+                        "orderNumber": 1,
+                        "chapterId": 1
+                    },
+                    {
+                        "id": 3,
+                        "name": "第二节",
+                        "summary": "简介",
+                        "orderNumber": 2,
+                        "chapterId": 1
+                    },
+                    {
+                        "id": 2,
+                        "name": "第三节",
+                        "summary": "简介",
+                        "orderNumber": 3,
+                        "chapterId": 1
+                    }, {
+                        "id": 1,
+                        "name": "第一节",
+                        "summary": "简介",
+                        "orderNumber": 1,
+                        "chapterId": 1
+                    },
+                    {
+                        "id": 3,
+                        "name": "第二节",
+                        "summary": "简介",
+                        "orderNumber": 2,
+                        "chapterId": 1
+                    },
+                    {
+                        "id": 2,
+                        "name": "第三节",
+                        "summary": "简介",
+                        "orderNumber": 3,
+                        "chapterId": 1
                     },
                 ]
             },
@@ -104,7 +144,14 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function() {
-
+        let query = wx.createSelectorQuery();
+        query.select('#timeline-container').boundingClientRect();
+        query.exec(function(res) {
+            wx: wx.pageScrollTo({
+                scrollTop: res[0].height,
+                duration: 1000,
+            })
+        });
     },
 
     /**

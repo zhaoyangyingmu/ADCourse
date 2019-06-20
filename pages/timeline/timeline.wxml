@@ -3,7 +3,7 @@
         <view slot="backText">返回</view>
         <view slot="content">学习进度</view>
     </cu-custom>
-    <view class='page-body'>
+    <view id='timeline-container' class='page-body'>
         <view class='cu-timeline' wx:for="{{chapterList}}" wx:key="index" wx:for-item="chapter">
             <view class='cu-time'>{{chapter.name}}</view>
             <view class='cu-item cuIcon-activity  {{section.id==latestSectionId?"text-green":"text-yellow light"}}' wx:for="{{chapter.sectionList}}" wx:key="index" wx:for-item="section" bindtap='navigationTo' data-sectionId='{{section.id}}'>
