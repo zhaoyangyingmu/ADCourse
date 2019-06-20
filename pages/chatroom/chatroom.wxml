@@ -1,28 +1,49 @@
 <!--pages/chatroom/chatroom.wxml-->
-<view class='container'>
+<view class='container' bindtap='loadKnowledge'>
     <cu-custom bgColor="bg-white" isBack="{{true}}">
         <view slot="content">{{name}}</view>
     </cu-custom>
-    <view class='page-body'>
-        <view class="cu-chat">
-            <view class='cu-item self' wx:for="{{dataList}}" wx:key="index">
-                <view class='main'>
-                    <view class='content bg-green shadow'>
+    <view id='chat-container' class='page-body'>
+        <view class="cu-chat chat-container">
+            <view class='cu-item {{item.whoSay==1?"self":" "}}' wx:if="{{item.orderNumber<=order}}" wx:for="{{dataList}}" wx:key="index">
+                <view class="cu-avatar radius" wx:if="{{item.whoSay==0}}">
+                    <text>h</text>
+                </view>
+                <view class='main' wx:if="{{item.type==0}}">
+                    <view class='content shadow {{item.whoSay==1?"bg-green":"bg-green light"}}' catchtap="showModal" data-target="NoteCollection" data-knowledge='{{item}}'>
                         {{item.content}}
                     </view>
                 </view>
-                <view class="cu-avatar radius" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big107000.jpg);"></view>
+                <view class='main' wx:if="{{item.type==1}}">
+                    <image src="{{item.content}}" class="radius" mode="widthFix"></image>
+                </view>
+                <view class="cu-avatar radius" wx:if="{{item.whoSay==1}}">
+                    <text>h</text>
+                </view>
             </view>
         </view>
-        <view class="cu-bar foot input {{InputBottom!=0?'cur':''}}" style="bottom:{{InputBottom}}px">
-            <view class="action">
-                <text class="cuIcon-sound text-grey"></text>
-            </view>
+        <!-- <view class="cu-bar foot input {{InputBottom!=0?'cur':''}}" style="bottom:{{InputBottom}}px">
             <input class="solid-bottom" bindfocus="InputFocus" bindblur="InputBlur" adjust-position="{{false}}" focus="{{false}}" maxlength="300" cursor-spacing="10"></input>
-            <view class="action">
-                <text class="cuIcon-emojifill text-grey"></text>
+            <button class="cu-btn line-green round light shadow">快速笔记</button>
+        </view> -->
+    </view>
+</view>
+
+<view class="cu-modal {{modalName=='NoteCollection'?'show':''}}">
+    <view class="cu-dialog">
+        <view class="cu-bar bg-white justify-end">
+            <view class="content">添加到</view>
+            <view class="action" bindtap="hideModal">
+                <text class="cuIcon-close text-red"></text>
             </view>
-            <button class="cu-btn bg-green shadow">发送</button>
+        </view>
+        <view class="padding-xl">
+            {{knowledge.content}}
+        </view>
+        <view class="cu-bar bg-white">
+            <view class="action margin-0 flex-sub text-red " bindtap="hideModal">取消 </view>
+            <view class="action margin-0 flex-sub text-green solid-left" bindtap="addNote">笔记</view>
+            <view class="action margin-0 flex-sub  text-green solid-left" bindtap="addCollection">收藏</view>
         </view>
     </view>
 </view>

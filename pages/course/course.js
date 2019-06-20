@@ -1,4 +1,6 @@
 // pages/course/course.js
+const app = getApp();
+
 Page({
 
     /**
@@ -82,11 +84,17 @@ Page({
         }
     },
 
+    onTake: function(event) {
+        const {
+            courseId
+        } = event.currentTarget.dataset;
+        this.show("选课成功");
+    },
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function(options) {
-
+        new app.ToastPannel();
     },
 
     /**

@@ -1,5 +1,10 @@
 //app.js
+import {
+    ToastPannel
+} from 'components/item-toast/index.js';
+
 App({
+    ToastPannel,
     onLaunch: function() {
         wx.getSystemInfo({
             success: e => {

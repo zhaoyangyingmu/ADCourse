@@ -1,3 +1,5 @@
+<import src="/components/item-toast/index.wxml" />
+<template is="toast" data="{{..._toast_}}" />
 <view class="container">
     <cu-custom bgColor="bg-transparent-theme" isBack="{{true}}">
         <view slot="content">{{course.name}}</view>
@@ -24,7 +26,7 @@
                     <text class="cuIcon-info text-green"></text>课程介绍
                 </view>
             </view>
-            <view class="content">{{course.summary}}</view>
+            <view class="content padding">{{course.summary}}</view>
             <view class="cu-bar bg-white margin-top">
                 <view class="action">
                     <text class="cuIcon-info text-green"></text>章节信息
