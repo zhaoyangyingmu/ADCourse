@@ -149,7 +149,6 @@ Page({
         query.exec(function(res) {
             wx: wx.pageScrollTo({
                 scrollTop: res[0].height,
-                duration: 1000,
             })
         });
     },

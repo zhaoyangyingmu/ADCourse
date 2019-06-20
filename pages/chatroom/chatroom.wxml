@@ -29,6 +29,26 @@
     </view>
 </view>
 
+<view class="cu-modal {{modalName=='Completed'?'show':''}}">
+    <view class="cu-dialog">
+        <view class="cu-bar bg-white justify-end">
+            <view class="content">测试</view>
+            <view class="action" bindtap="hideModal">
+                <text class="cuIcon-close text-red"></text>
+            </view>
+        </view>
+        <view class="padding-xl">
+            学习完毕。进行小节测试？
+        </view>
+        <view class="cu-bar bg-white justify-end">
+            <view class="action">
+                <button class="cu-btn line-green text-green" bindtap="hideModal">取消</button>
+                <button class="cu-btn bg-green margin-left" bindtap="navigateToTest">确定</button>
+
+            </view>
+        </view>
+    </view>
+</view>
 <view class="cu-modal {{modalName=='NoteCollection'?'show':''}}">
     <view class="cu-dialog">
         <view class="cu-bar bg-white justify-end">

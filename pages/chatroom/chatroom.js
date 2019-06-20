@@ -8,6 +8,7 @@ Page({
         "name": "第二节",
         "order": 1,
         "knowledge": null,
+        "sectionId": 1,
         "dataList": [{
                 "id": "12323342",
                 "type": 1,
@@ -96,7 +97,7 @@ Page({
 
     addNote: function(event) {
         // TODO 对选中的知识点做笔记
-        
+
         this.hideModal();
     },
 
@@ -106,6 +107,12 @@ Page({
         this.hideModal();
     },
 
+    navigateToTest: function(event) {
+        wx.navigateTo({
+            url: `../test/test?sectionId=${this.data.sectionId}`,
+        })
+        this.hideModal();
+    },
     /**
      * 获取&显示下一个知识点
      */
@@ -113,6 +120,13 @@ Page({
         var that = this;
         console.log("add");
         var newOrder = this.data.order + 1;
+        // 学习完毕
+        if (newOrder > that.data.dataList.length) {
+            that.setData({
+                modalName: "Completed"
+            })
+            return;
+        }
         that.setData({
             order: newOrder
         })

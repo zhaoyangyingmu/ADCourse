@@ -12,37 +12,37 @@ Page({
             id: 0,
             tag: '精选主题',
             url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big84000.jpg',
-            target: '../course/course'
+            target: '../themecourses/themecourses'
         }, {
             id: 1,
             tag: '精选主题',
             url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big84001.jpg',
-            target: '../course/course'
+            target: '../themecourses/themecourses'
         }, {
             id: 2,
             tag: '精选主题',
             url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big39000.jpg',
-            target: '../course/course'
+            target: '../themecourses/themecourses'
         }, {
             id: 3,
             tag: '精选主题',
             url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg',
-            target: '../course/course'
+            target: '../themecourses/themecourses'
         }, {
             id: 4,
             tag: '精选主题',
             url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big25011.jpg',
-            target: '../course/course'
+            target: '../themecourses/themecourses'
         }, {
             id: 5,
             tag: '精选主题',
             url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big21016.jpg',
-            target: '../course/course'
+            target: '../themecourses/themecourses'
         }, {
             id: 6,
             tag: '精选主题',
             url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big99008.jpg',
-            target: '../course/course'
+            target: '../themecourses/themecourses'
         }],
         categoryList: [{
             name: "推荐",
