@@ -85,7 +85,7 @@ Page({
     showModal(e) {
         this.setData({
             modalName: e.currentTarget.dataset.target,
-            knowledge: e.currentTarget.dataset.knowledge
+            knowledge: e.currentTarget.dataset.knowledge // 选中的知识点
         })
     },
     hideModal(e) {
@@ -95,12 +95,14 @@ Page({
     },
 
     addNote: function(event) {
-        // TODO 
+        // TODO 对选中的知识点做笔记
+        
         this.hideModal();
     },
 
     addCollection: function(event) {
-        //TODO
+        //TODO 收藏选中的知识点
+
         this.hideModal();
     },
 
