@@ -1,5 +1,8 @@
 // pages/collections/collection_item/collection_item.js
 var app = getApp();
+import chatApi from 'api/chatApi.js';
+import collectionApi from 'api/collectionApi.js';
+const collectionApiInstance = new collectionApi;
 
 Component({
   /**
@@ -32,24 +35,17 @@ Component({
    */
   methods: {
     delete_knowledge: function(event) {
-      var knowledge_id = event.currentTarget.dataset.knowledge_id;
-      console.log(event.currentTarget.dataset.knowledge_id);
-      wx.request({
-        method: "POST",
-        url: app.globalData.url + 'api/user/collections/delete/'+knowledge_id, //仅为示例，并非真实的接口地址
-        data: {
-          open_id: "123456"
-        },
-        header: {
-          'content-type': 'application/json;charset=UTF-8'// 默认值
-        },
-        success(res) {
-          console.log(res);
+      let knowledge_id = event.currentTarget.dataset.knowledge_id;
+      let data = {
+        "open_id": app.globalData.openId
+      }
+      collectionApiInstance.deleteCollection(knowledge_id, data, (res)=>{
+        if(res) {
           const pages = getCurrentPages();
           const lastPage = pages[pages.length - 1];
           lastPage.onLoad();
         }
-      });
+      })
     }
   }
 })

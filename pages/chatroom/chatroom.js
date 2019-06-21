@@ -1,7 +1,9 @@
 // pages/chatroom/chatroom.js
 import chatApi from 'api/chatApi.js';
+import collectionApi from 'api/collectionApi.js';
 const app = getApp();
 const api = new chatApi;
+const collectionApiInstance = new collectionApi;
 
 Page({
 
@@ -32,14 +34,21 @@ Page({
     addNote: function(event) {
         // TODO 对选中的知识点做笔记
 
+
         this.hideModal();
     },
 
     addCollection: function(event) {
         //TODO 收藏选中的知识点
-        console.log(event);
-        // 需要知识点的id，和openId
+        let data = {
+          "knowledge_id": event.target.dataset.id,
+          "open_id": app.globalData.openId
+        }
 
+        console.log(data);
+        collectionApiInstance.addCollection(data, (res) => {
+          console.log(res);
+        });
         this.hideModal();
     },
 

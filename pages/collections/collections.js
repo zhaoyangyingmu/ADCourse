@@ -1,5 +1,8 @@
 // pages/collections/collections.js
 var app = getApp();
+import chatApi from 'api/chatApi.js';
+import collectionApi from 'api/collectionApi.js';
+const collectionApiInstance = new collectionApi;
 
 Page({
 
@@ -40,31 +43,24 @@ Page({
      */
     onLoad: function (options) {
       console.log(this.data.collections);
-      // this.getCollectionData();
+      this.getCollectionData();
     },
 
     /**
      * 获取collecctions数据
     */
-    // getCollectionData: function() {
-    //   var that = this;
-    //   wx.request({
-    //     method: "POST",
-    //     url: app.globalData.url + 'api/user/collections/get_all', //仅为示例，并非真实的接口地址
-    //     data: {
-    //       open_id: "123456"
-    //     },
-    //     header: {
-    //       'content-type': 'application/json;charset=UTF-8'// 默认值
-    //     },
-    //     success(res) {
-    //       console.log(res);
-    //       that.setData({
-    //         collections: res.data.data
-    //       });
-    //     }
-    //   });
-    // },
+    getCollectionData: function() {
+      let data = {
+        "open_id": app.globalData.openId
+      }
+
+      let that = this;
+      collectionApiInstance.getCollections(data, (res)=>{
+        that.setData({
+          collections: res
+        });
+      });
+    },
 
     /**
      * 生命周期函数--监听页面初次渲染完成

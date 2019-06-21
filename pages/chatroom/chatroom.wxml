@@ -58,8 +58,8 @@
         </view>
         <view class="cu-bar bg-white">
             <view class="action margin-0 flex-sub text-red " bindtap="hideModal">取消 </view>
-            <view class="action margin-0 flex-sub text-green solid-left" bindtap="addNote">笔记</view>
-            <view class="action margin-0 flex-sub  text-green solid-left" bindtap="addCollection">收藏</view>
+            <view class="action margin-0 flex-sub text-green solid-left" bindtap="addNote" data-id="{{knowledge.id}}">笔记</view>
+            <view class="action margin-0 flex-sub  text-green solid-left" bindtap="addCollection" data-id="{{knowledge.id}}">收藏</view>
         </view>
     </view>
 </view>
