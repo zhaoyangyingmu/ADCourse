@@ -1,30 +1,25 @@
-<cu-custom bgColor="bg-gradual-pink" isBack="{{true}}">
-    <view slot="backText">返回</view>
-    <view slot="content">学习进度</view>
-</cu-custom>
-<view class="cu-timeline">
-    <view class="cu-time">昨天</view>
-    <view class="cu-item cur cuIcon-noticefill">
-        <view class="content bg-green shadow-blur">
-            <text>22:22</text> 【第三小节】哈哈哈
+<view class='container'>
+    <cu-custom bgColor="bg-white" isBack="{{true}}">
+        <view slot="backText">返回</view>
+        <view slot="content">学习进度</view>
+    </cu-custom>
+    <view id='timeline-container' class='page-body'>
+        <view class='cu-timeline' wx:for="{{chapterList}}" wx:key="index" wx:for-item="chapter">
+            <view class='cu-time'>{{chapter.name}}</view>
+            <view class='cu-item cuIcon-activity  {{section.id==latestSectionId?"text-green":"text-yellow light"}}' wx:for="{{chapter.sectionList}}" wx:key="index" wx:for-item="section" bindtap='navigationTo' data-sectionId='{{section.id}}'>
+                <view class="content {{section.id==latestSectionId?'bg-green shadow-blur':''}}">
+                    <view>
+                        <text>【{{section.name}}】</text> {{section.summary}}
+                    </view>
+                </view>
+            </view>
         </view>
-    </view>
-    <view class="cu-item text-red cuIcon-attentionforbidfill">
-        <view class="content bg-red shadow-blur">
-            什么都没有看过
-        </view>
-    </view>
-    <view class="cu-item text-grey cuIcon-evaluate_fill">
-        <view class="content bg-grey shadow-blur">
-            什么都不知道
-        </view>
-    </view>
-    <view class="cu-item text-blue">
-        <view class="bg-blue content">
-            <text>20:00</text> 【第二小节】还不错
-        </view>
-        <view class="bg-cyan content">
-            <text>10:00</text> 【第一小节】开始吧
+        <view class='cu-timeline'>
+            <view class="cu-item cur cuIcon-noticefill">
+                <view class="content">
+                    学完上一小节即可加载新内容。
+                </view>
+            </view>
         </view>
     </view>
 </view>

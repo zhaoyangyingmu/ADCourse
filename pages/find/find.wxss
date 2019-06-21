@@ -1,10 +1,8 @@
-@import "/colorui/main.wxss";
-@import "/colorui/icon.wxss";
-
 .card-swiper {
     height: 380rpx !important;
 }
 
-.course-container {
-    
+.shadow {
+    /* border-radius: 30rpx; */
+    box-shadow: 3rpx 2rpx 30rpx rgba(1, 1, 1, 0.1);
 }

@@ -41,11 +41,11 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 5,
+			"current": 9,
 			"list": [
 				{
-					"id": -1,
-					"name": "profile",
+					"id": 0,
+					"name": "个人界面",
 					"pathName": "pages/personal/personal",
 					"query": "",
 					"scene": null
@@ -66,15 +66,22 @@
 				},
 				{
 					"id": -1,
-					"name": "find",
+					"name": "发现",
 					"pathName": "pages/find/find",
 					"query": "",
 					"scene": null
 				},
 				{
 					"id": -1,
-					"name": "study",
+					"name": "学习界面",
 					"pathName": "pages/study/study",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "学习进度",
+					"pathName": "pages/timeline/timeline",
 					"query": "",
 					"scene": null
 				},
@@ -82,6 +89,27 @@
 					"id": -1,
 					"name": "system",
 					"pathName": "pages/system/system",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "聊天室",
+					"pathName": "pages/chatroom/chatroom",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "课程详情",
+					"pathName": "pages/course/course",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "小节测试",
+					"pathName": "pages/test/test",
 					"scene": null
 				}
 			]

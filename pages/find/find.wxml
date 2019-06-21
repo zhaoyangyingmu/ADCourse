@@ -1,19 +1,46 @@
 <view class='container'>
+    <cu-custom bgColor="bg-transparent-theme">
+        <view slot="content" class="text-bold text-xl">课程</view>
+    </cu-custom>
     <view class='page-body'>
         <view class='theme-container'>
             <swiper class="card-swiper square-dot" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500" bindchange="cardSwiper" indicator-color="#8799a3" indicator-active-color="#FF9933">
-                <swiper-item wx:for="{{swiperList}}" wx:key="index" class="{{cardCur==index?'cur':''}}">
+                <swiper-item wx:for="{{themeList}}" wx:key="index" class="{{cardCur==index?'cur':''}}">
                     <view class="swiper-item">
-                        <item-theme url="{{item.url}}" tag="{{item.tag}}" target="{{item.target}}"></item-theme>
+                        <item-theme url="{{item.iamgeUrl}}" tag="精选主题" target="{{themeTarget}}" targetId="{{item.id}}"></item-theme>
                     </view>
                 </swiper-item>
             </swiper>
         </view>
-        <view class='category-container'>
+        <view>
             <van-tabs animated swipeable color="#FF9933" line-width="25">
-                <van-tab wx:for="{{categoryList}}" wx:key="index" wx:for-item="category" title="{{category.name}}">
-                    <view class='course-container margin-left-lg margin-right-lg'>
-                        <item-course class='card-shadow' wx:for="{{category.courseList}}" wx:for-item="course" wx:key="id" url='{{course.url}}' date='{{course.date}}' target='{{course.target}}'></item-course>
+                <van-tab wx:for="{{categoryList}}" wx:key="index" wx:for-item="category" title="{{category.type}}">
+                    <view class="cu-card case {{isCard?'no-card':''}}" bind:tap='onNavigateToCourse' data-target='{{courseTarget}}' data-courseId='{{course.id}}' wx:for="{{category.courseList}}" wx:key="id" wx:for-item="course">
+                        <view class="cu-item shadow">
+                            <view class="image">
+                                <image src="{{course.imageSrc}}" mode="widthFix"></image>
+                                <view class="cu-tag bg-theme">{{course.taked?"已选":"New"}}</view>
+                                <view class="cu-bar bg-shadeBottom">
+                                    <text class="text-cut">{{course.summary}}</text>
+                                </view>
+                            </view>
+                            <view class="cu-list menu-avatar">
+                                <view class="cu-item">
+                                    <view class="cu-avatar round lg">
+                                        <text>{{course.teacherAvatar}}</text>
+                                    </view>
+                                    <view class="content flex-sub">
+                                        <view class="text-black text-bold">{{course.teacherName}}</view>
+                                        <view class="text-gray text-sm flex justify-between">
+                                            {{course.startTime}} - {{course.endTime}}
+                                            <view class="text-gray text-sm">
+                                                <view class="cu-tag bg-green light sm round">{{course.credit}}学分</view>
+                                            </view>
+                                        </view>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
                     </view>
                 </van-tab>
             </van-tabs>

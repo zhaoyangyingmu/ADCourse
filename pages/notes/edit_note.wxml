@@ -1,6 +1,8 @@
 <!--pages/notes/edit_note.wxml-->
 <view class='container'>
-  <item_header header="编辑笔记"></item_header>
+    <cu-custom bgColor="bg-transparent-theme" isBack="{{true}}">
+        <view slot="content" class="text-bold text-xl">编辑笔记</view>
+    </cu-custom>
   <view class='panel card-shadow' data-url="{{url}}">
       <form bindsubmit='submit'>
         <view class='text_content'>

@@ -11,6 +11,10 @@ Component({
         target: {
             type: String,
             value: '.'
+        },
+        targetId: {
+            type: Number,
+            value: 0
         }
     },
     data: {
@@ -19,10 +23,11 @@ Component({
     methods: {
         onNavigateTo: function(event) {
             const {
-                target
+                target,
+                targetId
             } = event.currentTarget.dataset;
             wx.navigateTo({
-                url: `${target}`,
+                url: `${target}?targetId={{targetId}}`,
             })
         }
     }

@@ -1,0 +1,10 @@
+<view class="item-container">
+    <view class='item-title'>{{title}}</view>
+    <view class='item-content'>
+        <radio-group class='radio-group' bindchange='itemChange'>
+            <label class='radio' wx:for='{{items}}'>
+                <radio value='{{item.id}}'/><text>{{item.value}}</text>
+            </label>
+        </radio-group>
+    </view>
+</view>

@@ -1,7 +1,16 @@
 <!--pages/collections/collections.wxml-->
 <view class='container'>
+<<<<<<< HEAD
   <item_header header="我的收藏"></item_header>
   <view class='collection_body'>
   <collection_item wx:for="{{collections}}" importance_degree="{{item.importance_degree}}" knowledge_id="{{item.id}}" content="{{item.content}}"></collection_item>
   </view>
+=======
+    <cu-custom bgColor="bg-transparent-theme" isBack="{{true}}">
+        <view slot="content" class="text-bold text-xl">我的收藏</view>
+    </cu-custom>
+    <view class='collection_body'>
+        <collection_item wx:for="{{collections}}" wx:key="index" importance_degree="{{item.importance_degree}}" id="{{item.id}}" content="{{item.content}}"></collection_item>
+    </view>
+>>>>>>> 9ba69ef0b15521483e5c6647f10e5149e97e207c
 </view>

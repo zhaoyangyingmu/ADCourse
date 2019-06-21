@@ -4,21 +4,9 @@ Component({
             type: String,
             value: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big25011.jpg'
         },
-        price: {
+        tag: {
             type: String,
-            value: '0.0'
-        },
-        unit: {
-            type: String,
-            value: '￥'
-        },
-        date: {
-            type: String,
-            value: ''
-        },
-        todo: {
-            type: String,
-            value: ''
+            value: '精选主题'
         },
         target: {
             type: String,
@@ -29,7 +17,7 @@ Component({
 
     },
     methods: {
-        onNavigateTo: function(event) {
+        onNavigateTo: function (event) {
             const {
                 target
             } = event.currentTarget.dataset;
