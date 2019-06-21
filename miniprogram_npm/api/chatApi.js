@@ -41,7 +41,7 @@ class chatApi {
     /**
      * 提交小节测试答案
      */
-    pushAnswers(sectionId, data) {
+    pushAnswers(sectionId, data, callback) {
         wx.showLoading({
             title: '正在提交……'
         })
@@ -53,14 +53,17 @@ class chatApi {
                         icon: 'none'
                     })
                     wx.hideLoading();
+                    callback(true);
                 } else {
                     wx.hideLoading();
+                    callback(false);
                     errorHandler.showException(res.errorCode, res.message);
                 }
             },
             err => {
                 wx.hideLoading();
                 errorHandler.showException(-1, "出错了");
+                callback(false);
             }
         )
     }

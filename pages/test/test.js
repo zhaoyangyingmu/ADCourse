@@ -39,7 +39,7 @@ Page({
         for (let key in this.data.answerList) {
             answerList.push(this.data.answerList[key]);
         }
-        console.log(answerList);
+        console.log(this.data.answerList);
         data.answerList = answerList;
         if (answerList.length < this.data.questionList.length) {
             wx.showToast({
@@ -48,7 +48,13 @@ Page({
             })
             return;
         }
-        api.pushAnswers(data.sectionId, data)
+        api.pushAnswers(data.sectionId, data, (res) => {
+            if (res) {
+                wx.navigateBack({
+                    delta: 1
+                });
+            }
+        })
     },
     /**
      * 生命周期函数--监听页面加载
@@ -61,7 +67,7 @@ Page({
                 chapterId: data.chapterId,
                 sectionId: data.sectionId,
                 questionList: data.questionList,
-                tested: data.questionList[0][answerId] > 0
+                tested: data.questionList[0].answerId > 0
             })
         })
     }

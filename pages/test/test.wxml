@@ -19,7 +19,7 @@
                 </view>
             </view>
             <view wx:else class='item-content'>
-                <radio-group class='radio-group' value="{{question.id}}" bindchange='itemChange' data-questionid="{{question.questionId}}">
+                <radio-group class='radio-group' bindchange='itemChange' data-questionid="{{question.id}}">
                     <label class='item-radio' wx:for='{{question.optionList}}' wx:key="index" wx:for-item="option">
                         <radio class="radio" value='{{option.id}}' />
                         <text class='text-black'>{{alphaList[index]}} {{option.content}}</text>
