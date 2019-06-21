@@ -10,32 +10,7 @@ Page({
      * 页面的初始数据
      */
     data: {
-      collections: [
-        {
-          "id": 1,
-          "type": 1,
-          "content": "张健的肝真好",
-          "order_number": 1,
-          "section_id": 1,
-          "importance_degree": 3
-        },
-        {
-          "id": 1,
-          "type": 1,
-          "content": "张健：我为我的肝代言！",
-          "order_number": 1,
-          "section_id": 1,
-          "importance_degree": 2
-        },
-        {
-          "id": 1,
-          "type": 1,
-          "content": "张健：我的肝真好！",
-          "order_number": 1,
-          "section_id": 1,
-          "importance_degree": 3
-        }
-      ]
+      collections: []
     },
 
     /**

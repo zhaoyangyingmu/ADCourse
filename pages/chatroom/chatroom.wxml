@@ -1,7 +1,7 @@
 <!--pages/chatroom/chatroom.wxml-->
 <view class='container' bindtap='loadKnowledge'>
     <cu-custom bgColor="bg-white" isBack="{{true}}">
-        <view slot="content">{{name}}</view>
+        <view slot="content">学习知识点</view>
     </cu-custom>
     <view id='chat-container' class='page-body'>
         <view class="cu-chat chat-container">

@@ -63,6 +63,7 @@ Page({
                         that.setData({
                             id: res.openId
                         })
+                        that.onShow();
                         // wx.setStorage({
                         // key: 'openId',
                         // data: res.openId
