@@ -1,56 +1,70 @@
 {
-  "pages": [
-    "pages/find/find",
-    "pages/index/index",
-    "pages/logs/logs",
-    "pages/personal/personal",
-    "pages/study/study",
-    "pages/system/system",
-    "pages/course/course",
-    "pages/chatroom/chatroom",
-    "pages/test/test",
-    "pages/notes/notes",
-    "pages/collections/collections",
-    "pages/themecourses/themecourses",
-    "pages/notes/edit_note",
-    "pages/timeline/timeline"
-  ],
-  "window": {
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle": "black"
-  },
-  "tabBar": {
-    "color": "#dedee0",
-    "selectedColor": "#ff9933",
-    "borderStyle": "black",
-    "list": [
-      {
-        "selectedIconPath": "static/images/ic_list_selected.png",
-        "iconPath": "static/images/ic_list.png",
-        "pagePath": "pages/study/study",
-        "text": "学习"
-      },
-      {
-        "selectedIconPath": "static/images/ic_discover_selected.png",
-        "iconPath": "static/images/ic_discover.png",
-        "pagePath": "pages/find/find",
-        "text": "发现"
-      },
-      {
-        "selectedIconPath": "static/images/ic_notice_selected.png",
-        "iconPath": "static/images/ic_notice.png",
-        "pagePath": "pages/system/system",
-        "text": "系统"
-      },
-      {
-        "selectedIconPath": "static/images/ic_home_selected.png",
-        "iconPath": "static/images/ic_home.png",
-        "pagePath": "pages/personal/personal",
-        "text": "我的"
-      }
-    ]
-  },
-  "sitemapLocation": "sitemap.json"
+    "pages": [
+        "pages/personal/personal",
+        "pages/find/find",
+        "pages/logs/logs",
+        "pages/study/study",
+        "pages/system/system",
+        "pages/course/course",
+        "pages/chatroom/chatroom",
+        "pages/test/test",
+        "pages/notes/notes",
+        "pages/collections/collections",
+        "pages/themecourses/themecourses",
+        "pages/notes/edit_note",
+        "pages/timeline/timeline",
+        "pages/personal/editProfile"
+    ],
+    "usingComponents": {
+        "cu-custom": "/colorui/components/cu-custom",
+        "item-analysis": "/components/item-analysis/index",
+        "item-mine": "/components/item-mine/index",
+        "item-theme": "/components/item-theme-course/index",
+        "item-to-learning": "/components/item-to-learning/index",
+        "item_delete_note_button": "/components/item_delete_note_button/item_delete_note_button",
+        "item_header": "/components/item_header/item_header",
+        "item_knowledge": "/components/item_knowledge/item_knowledge",
+        "item_message": "/components/item_message/item_message",
+        "item_note": "/components/item_note/item_note",
+        "item_section": "/components/item_section/item_section",
+        "item_collection": "/components/item_collection/item_collection"
+    },
+    "window": {
+        "navigationBarBackgroundColor": "#39b54a",
+        "navigationBarTitleText": "ADCourse",
+        "navigationStyle": "custom",
+        "navigationBarTextStyle": "white"
+    },
+    "tabBar": {
+        "color": "#dedee0",
+        "selectedColor": "#ff9933",
+        "borderStyle": "black",
+        "list": [
+            {
+                "selectedIconPath": "static/icon/ic_list_selected.png",
+                "iconPath": "static/icon/ic_list.png",
+                "pagePath": "pages/study/study",
+                "text": "学习"
+            },
+            {
+                "selectedIconPath": "static/icon/ic_discover_selected.png",
+                "iconPath": "static/icon/ic_discover.png",
+                "pagePath": "pages/find/find",
+                "text": "发现"
+            },
+            {
+                "selectedIconPath": "static/icon/ic_notice_selected.png",
+                "iconPath": "static/icon/ic_notice.png",
+                "pagePath": "pages/system/system",
+                "text": "系统"
+            },
+            {
+                "selectedIconPath": "static/icon/ic_home_selected.png",
+                "iconPath": "static/icon/ic_home.png",
+                "pagePath": "pages/personal/personal",
+                "text": "我的"
+            }
+        ]
+    },
+    "sitemapLocation": "sitemap.json"
 }

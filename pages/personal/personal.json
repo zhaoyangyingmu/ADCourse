@@ -1,7 +1,5 @@
 {
   "usingComponents": {
-      "van-button": "vant-weapp/button",
-      "item-mine":"../components/item-mine",
-      "item-analysis": "../components/item-analysis"
+      "van-button": "vant-weapp/button"
   }
 }

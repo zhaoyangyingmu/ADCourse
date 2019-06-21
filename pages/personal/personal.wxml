@@ -1,4 +1,7 @@
 <view class='container'>
+    <cu-custom bgColor="bg-transparent-theme">
+        <view slot="content" class="text-bold text-xl">个人信息</view>
+    </cu-custom>
     <view class='page-body'>
         <view class='page-body-wrapper'>
             <!-- 个人信息模块 -->
@@ -9,8 +12,8 @@
                         <view class='profile-name'>{{name}}</view>
                         <text class='profile-id'>学号：{{id}}</text>
                     </view>
-                    <view class="cu-avatar round lg margin-left" style='background-image:url({{avatar}});'>
-                        <view class="cu-tag badge {{gender!='male'?'cuIcon-female bg-pink':'cuIcon-male bg-blue'}}"></view>
+                    <view class="cu-avatar round lg margin-left" style='background-image:url({{avatar}});' bindtap='navigateToEdit'>
+                        <view class="cu-tag badge {{gender!='男'?'cuIcon-female bg-pink':'cuIcon-male bg-blue'}}"></view>
                     </view>
                 </view>
                 <!-- 学习分析 -->

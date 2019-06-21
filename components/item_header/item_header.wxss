@@ -1,0 +1,15 @@
+/* pages/components/item_header/item_header.wxss */
+/* 顶上的有色空白 */
+.top {
+  background-color: #ff9933;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 30rpx 50rpx;
+}
+
+.top text {
+  display: inline-block;
+  font-family: "宋体";
+  color: rgba(255, 255, 255, 0.9);
+}

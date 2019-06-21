@@ -1,2 +1,10 @@
 <!--pages/system/system.wxml-->
-<text>pages/system/system.wxml</text>
+<view class='container'>
+    <cu-custom bgColor="bg-transparent-theme">
+        <view slot="content" class="text-bold text-xl">系统消息</view>
+    </cu-custom>
+    <view class="message_body">
+        <item_message wx:for="{{messages}}" wx:key="index" message_type="{{item.message_type}}" title="{{item.title}}" r time="{{item.time}}" message="{{item.message}}">
+        </item_message>
+    </view>
+</view>

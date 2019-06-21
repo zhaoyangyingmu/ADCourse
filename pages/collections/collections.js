@@ -1,4 +1,9 @@
 // pages/collections/collections.js
+var app = getApp();
+import chatApi from 'api/chatApi.js';
+import collectionApi from 'api/collectionApi.js';
+const collectionApiInstance = new collectionApi;
+
 Page({
 
     /**
@@ -37,7 +42,24 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
+      console.log(this.data.collections);
+      this.getCollectionData();
+    },
 
+    /**
+     * 获取collecctions数据
+    */
+    getCollectionData: function() {
+      let data = {
+        "open_id": app.globalData.openId
+      }
+
+      let that = this;
+      collectionApiInstance.getCollections(data, (res)=>{
+        that.setData({
+          collections: res
+        });
+      });
     },
 
     /**

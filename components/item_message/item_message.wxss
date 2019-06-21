@@ -1,0 +1,47 @@
+/* pages/components/item_message/item_message.wxss */
+.item_message {
+  display: flex;
+  margin-top: 50rpx;
+}
+
+
+.item_message image {
+  width: 150rpx;
+  height: 150rpx;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1rpx solid #9abaca;
+}
+
+.row:nth-child(1) {
+  display: flex;
+  justify-content: space-between;
+  padding: 5rpx 15rpx;
+  flex-wrap: wrap;
+}
+
+.row:nth-child(1) view:nth-child(1) {
+  font-family: "KaiTi";
+  font-size: 1.2em;
+  color: #2a3a4a;
+  white-space: nowrap;
+}
+.row:nth-child(1) view:nth-child(2) {
+  color: #7a8a9a;
+  white-space: nowrap;
+}
+
+
+.row:nth-child(2) {
+  flex: 1;
+  padding: 10rpx 20rpx;
+  max-height: 50rpx;
+  max-width: 450rpx;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}

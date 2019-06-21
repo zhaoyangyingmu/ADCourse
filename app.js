@@ -1,6 +1,19 @@
 //app.js
+import {
+    ToastPannel
+} from 'components/item-toast/index.js';
+
 App({
+    ToastPannel,
     onLaunch: function() {
+        wx.getSystemInfo({
+            success: e => {
+                this.globalData.StatusBar = e.statusBarHeight;
+                let custom = wx.getMenuButtonBoundingClientRect();
+                this.globalData.Custom = custom;
+                this.globalData.CustomBar = custom.bottom + custom.top - e.statusBarHeight;
+            }
+        })
         // 展示本地存储能力
         var logs = wx.getStorageSync('logs') || []
         logs.unshift(Date.now())
@@ -32,8 +45,94 @@ App({
                 }
             }
         })
+
+
     },
     globalData: {
-        userInfo: null
+        userInfo: null,
+        loginCode: null,
+        version: '1.0.0',
+        appId: 'wx74e4dde03e2bbfdc',
+        appSecret: '55e421ac78fb7fcc27898d0f10304783',
+        openId: '123456', // 用于测试
+        teacherAvatar: "",
+        host: 'http://47.102.201.65:18081/',
+        ossHost: 'http://47.102.201.65:18081/',
+        ColorList: [{
+                title: '嫣红',
+                name: 'red',
+                color: '#e54d42'
+            },
+            {
+                title: '桔橙',
+                name: 'orange',
+                color: '#f37b1d'
+            },
+            {
+                title: '明黄',
+                name: 'yellow',
+                color: '#fbbd08'
+            },
+            {
+                title: '橄榄',
+                name: 'olive',
+                color: '#8dc63f'
+            },
+            {
+                title: '森绿',
+                name: 'green',
+                color: '#39b54a'
+            },
+            {
+                title: '天青',
+                name: 'cyan',
+                color: '#1cbbb4'
+            },
+            {
+                title: '海蓝',
+                name: 'blue',
+                color: '#0081ff'
+            },
+            {
+                title: '姹紫',
+                name: 'purple',
+                color: '#6739b6'
+            },
+            {
+                title: '木槿',
+                name: 'mauve',
+                color: '#9c26b0'
+            },
+            {
+                title: '桃粉',
+                name: 'pink',
+                color: '#e03997'
+            },
+            {
+                title: '棕褐',
+                name: 'brown',
+                color: '#a5673f'
+            },
+            {
+                title: '玄灰',
+                name: 'grey',
+                color: '#8799a3'
+            },
+            {
+                title: '草灰',
+                name: 'gray',
+                color: '#aaaaaa'
+            },
+            {
+                title: '墨黑',
+                name: 'black',
+                color: '#333333'
+            },
+            {
+                title: '雅白',
+                name: 'white',
+                color: '#ffffff'
+            },
+        ]
     }
 })

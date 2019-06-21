@@ -1,4 +1,8 @@
 // pages/notes/edit_note.js
+const app = getApp();
+import noteApi from 'api/noteApi.js';
+const noteApiInstance = new noteApi;
+
 Page({
 
   /**
@@ -6,16 +10,19 @@ Page({
    */
   data: {
     url: "section/1",
-    content: "内容"
+    content: "内容",
+    add: true
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(options);
     this.setData({
       url: options.url,
-      content: options.content
+      content: options.content,
+      add: options.add
     });
   },
 
@@ -76,5 +83,23 @@ Page({
   },
   submit:function(event) {
     console.log(event);
+    let data = {
+      "userId":app.globalData.openId,
+      "url":this.data.url,
+      "content": this.data.content
+    }
+    console.log(data);
+    if(this.data.add === "1") {
+      console.log("add");
+      noteApiInstance.addNote(data, (res)=>{
+        console.log(res);
+      })
+    }
+    else {
+      console.log("modify");
+      noteApiInstance.modifyNote(data, (res) => {
+        console.log(res);
+      })
+    }
   }
 })

@@ -1,1 +1,4 @@
 /* pages/chatroom/chatroom.wxss */
+.container {
+    background: #f7f7f6;
+}

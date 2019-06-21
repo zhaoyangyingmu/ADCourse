@@ -1,5 +1,34 @@
-<view class='container'>
+<import src="/components/item-toast/index.wxml" />
+<template is="toast" data="{{..._toast_}}" />
+<view class="container">
+    <cu-custom bgColor="bg-transparent-theme" isBack="{{true}}">
+        <view slot="content">{{theme.name}}</view>
+    </cu-custom>
     <view class='page-body'>
-        <image></image>
+        <view class='head-container' style="background:url({{theme.imageUrl}}) no-repeat center center;"></view>
+        <view class='content-container padding-left-lg'>
+            <view class="text-black text-bold text-xl padding-lg">
+                {{theme.name}}
+            </view>
+            <view class="content padding">{{theme.summary}}</view>
+            <view class="cu-bar bg-white margin-top">
+                <view class="action">
+                    <text class="text-green"></text>包括{{theme.courseList.length}}门子课程
+                </view>
+            </view>
+            <view wx:for="{{theme.courseList}}" wx:key="index">
+                <view class="cu-card">
+                    <view class="cu-item bg-img" style="background-image:url({{item.imageSrc}})">
+                        <view class="cardTitle">
+                            {{item.name}}
+                        </view>
+                    </view>
+                    <text class='padding-left-lg'>{{item.summary}}</text>
+                </view>
+            </view>
+        </view>
+        <view wx:if="{{show}}" class='foot-container padding-lg'>
+            <button class="cu-btn block bg-green margin-tb-sm lg" type="" bindtap='onTake' data-themeId='{{id}}'>选课</button>
+        </view>
     </view>
 </view>

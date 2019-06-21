@@ -1,4 +1,7 @@
 // pages/study/study.js
+import courseApi from 'api/courseApi.js';
+const app = getApp();
+const api = new courseApi;
 
 Page({
 
@@ -6,15 +9,14 @@ Page({
      * 页面的初始数据
      */
     data: {
-        courseList: [{
-            id: 1,
-            status: 1,
-            time: '2019-06-12',
-            url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big99008.jpg',
-            target: '../timeline/timeline'
-        }]
+        target: "../timeline/timeline",
+        courseList: []
     },
-
+    navigateToFind: function(e) {
+        wx.switchTab({
+            url: '/pages/find/find'
+        })
+    },
     /**
      * 生命周期函数--监听页面加载
      */
@@ -33,7 +35,11 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function() {
-
+        api.loadTakedCourses((dataList) => {
+            this.setData({
+                courseList: dataList
+            })
+        })
     },
 
     /**

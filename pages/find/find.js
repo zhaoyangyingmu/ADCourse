@@ -1,101 +1,18 @@
 // pages/find/find.js
+import courseApi from 'api/courseApi.js';
+var utils = require("../../utils/util.js");
+var setMessageNumber = utils.setMessageNumber;
+const api = new courseApi;
 Page({
     /**
      * 页面的初始数据
      */
     data: {
         cardCur: 0,
-        swiperList: [{
-            id: 0,
-            tag: '精选主题',
-            url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big84000.jpg',
-            target: '../course/course'
-        }, {
-            id: 1,
-            tag: '精选主题',
-            url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big84001.jpg',
-            target: '../course/course'
-        }, {
-            id: 2,
-            tag: '精选主题',
-            url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big39000.jpg',
-            target: '../course/course'
-        }, {
-            id: 3,
-            tag: '精选主题',
-            url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg',
-            target: '../course/course'
-        }, {
-            id: 4,
-            tag: '精选主题',
-            url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big25011.jpg',
-            target: '../course/course'
-        }, {
-            id: 5,
-            tag: '精选主题',
-            url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big21016.jpg',
-            target: '../course/course'
-        }, {
-            id: 6,
-            tag: '精选主题',
-            url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big99008.jpg',
-            target: '../course/course'
-        }],
-        categoryList: [{
-            name: "推荐",
-            courseList: [{
-                id: 0,
-                date: '2019-03-12',
-                todo: '开学',
-                url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big84000.jpg',
-                target: '../course/course'
-            }, {
-                id: 1,
-                date: '2019-03-12',
-                todo: '开学',
-                url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big84001.jpg',
-                target: '../course/course'
-            }, {
-                id: 2,
-                date: '2019-03-12',
-                todo: '开学',
-                url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big39000.jpg',
-                target: '../course/course'
-            }, {
-                id: 3,
-                date: '2019-03-12',
-                todo: '开学',
-                url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg',
-                target: '../course/course'
-            }, {
-                id: 4,
-                date: '2019-03-12',
-                todo: '开学',
-                url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big25011.jpg',
-                target: '../course/course'
-            }, {
-                id: 5,
-                date: '2019-03-12',
-                todo: '开学',
-                url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big21016.jpg',
-                target: '../course/course'
-            }, {
-                id: 6,
-                date: '2019-03-12',
-                todo: '开学',
-                url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big99008.jpg',
-                target: '../course/course'
-            }]
-        }, {
-            name: "互联网",
-            courseList: []
-        }, {
-            name: "生活",
-            courseList: []
-        }, {
-            name: "自我",
-            courseList: []
-        }]
+        themeTarget: '../themecourses/themecourses',
+        courseTarget: '../course/course',
+        themeList: [],
+        categoryList: []
     },
     DotStyle(e) {
         this.setData({
@@ -162,60 +79,37 @@ Page({
             })
         }
     },
+    onNavigateToCourse: function(event) {
+        const {
+            target,
+            courseid
+        } = event.currentTarget.dataset;
+
+        console.log(courseid);
+        wx.navigateTo({
+            url: `${target}?courseId=${courseid}`,
+        })
+    },
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function(options) {
-        this.towerSwiper('swiperList');
+        setMessageNumber();
+        this.towerSwiper('themeList');
         // 初始化towerSwiper 传已有的数组名即可
     },
-
-    /**
-     * 生命周期函数--监听页面初次渲染完成
-     */
-    onReady: function() {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面显示
-     */
     onShow: function() {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面隐藏
-     */
-    onHide: function() {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面卸载
-     */
-    onUnload: function() {
-
-    },
-
-    /**
-     * 页面相关事件处理函数--监听用户下拉动作
-     */
-    onPullDownRefresh: function() {
-
-    },
-
-    /**
-     * 页面上拉触底事件的处理函数
-     */
-    onReachBottom: function() {
-
-    },
-
-    /**
-     * 用户点击右上角分享
-     */
-    onShareAppMessage: function() {
-
+        var that = this;
+        api.loadCourses((dataList) => {
+            console.log(dataList);
+            that.setData({
+                categoryList: dataList
+            })
+        })
+        api.loadThemes((dataList) => {
+            that.setData({
+                themeList: dataList
+            })
+        })
     }
 })
