@@ -1,35 +1,24 @@
 import api from './api.js';
 import config from './config.js';
+import errorHandler from '../util/errorHandler.js';
 
 class chatApi {
     constructor() {}
-
-    /**
-     * 处理错误
-     */
-    showError(errorMsg) {
-        if (typeof errorMsg != "string") {
-            console.log(errorMsg);
-            errorMsg = "出错了>_<"
-        }
-        wx.showToast({
-            title: errorMsg,
-            icon: 'none'
-        })
-    }
-
     /**
      * 获取小节所有知识点
      */
     loadKnowledges(sectionId, setData) {
-        api.get(`${config.section}/${sectionId}/knowledge`, {}).subscribe(
+        api.get(`${config.section}${sectionId}/knowledge`, {}).subscribe(
             res => {
-                if (res.errorCode == 0 && res.data != null)
-                    setData(res.data);
-                else
-                    this.showError(res.message);
+                if (res.errorCode == 0 && res.dataList != null) {
+                    setData(res.dataList);
+                } else {
+                    errorHandler.showException(res.errorCode, res.message);
+                }
             },
-            err => this.showError(err),
+            err => {
+                errorHandler.showException(-1, "出错了");
+            }
         )
     }
 
@@ -37,15 +26,17 @@ class chatApi {
      * 获取小节测试
      */
     loadTest(sectionId, setData) {
-        api.get(`${config.section}/${sectionId}/question`, {}).subscribe(
+        api.get(`${config.section}${sectionId}/question`, {}).subscribe(
             res => {
                 if (res.errorCode == 0 && res.data != null) {
                     setData(res.data);
-                } else
-                    this.showError(res.message);
+                } else {
+                    errorHandler.showException(res.errorCode, res.message);
+                }
             },
-            err => this.showError(err),
-        )
+            err => {
+                errorHandler.showException(-1, "出错了");
+            })
     }
     /**
      * 提交小节测试答案
@@ -64,12 +55,12 @@ class chatApi {
                     wx.hideLoading();
                 } else {
                     wx.hideLoading();
-                    this.showError(res.message);
+                    errorHandler.showException(res.errorCode, res.message);
                 }
             },
             err => {
                 wx.hideLoading();
-                this.showError(err)
+                errorHandler.showException(-1, "出错了");
             }
         )
     }

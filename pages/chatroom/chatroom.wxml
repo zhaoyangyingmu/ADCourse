@@ -6,9 +6,7 @@
     <view id='chat-container' class='page-body'>
         <view class="cu-chat chat-container">
             <view class='cu-item {{item.whoSay==1?"self":" "}}' wx:if="{{item.orderNumber<=order}}" wx:for="{{dataList}}" wx:key="index">
-                <view class="cu-avatar radius" wx:if="{{item.whoSay==0}}">
-                    <text>h</text>
-                </view>
+                <view class="cu-avatar radius" wx:if="{{item.whoSay==0}}" style="background-image:url({{teacherAvatar}})"> </view>
                 <view class='main' wx:if="{{item.type==0}}">
                     <view class='content shadow {{item.whoSay==1?"bg-green":"bg-green light"}}' catchtap="showModal" data-target="NoteCollection" data-knowledge='{{item}}'>
                         {{item.content}}
@@ -17,9 +15,7 @@
                 <view class='main' wx:if="{{item.type==1}}">
                     <image src="{{item.content}}" class="radius" mode="widthFix"></image>
                 </view>
-                <view class="cu-avatar radius" wx:if="{{item.whoSay==1}}">
-                    <text>h</text>
-                </view>
+                <view class="cu-avatar radius" wx:if="{{item.whoSay==1}}" style="background-image:url({{studentAvatar}})"> </view>
             </view>
         </view>
         <!-- <view class="cu-bar foot input {{InputBottom!=0?'cur':''}}" style="bottom:{{InputBottom}}px">

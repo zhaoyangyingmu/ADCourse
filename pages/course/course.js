@@ -15,9 +15,9 @@ Page({
 
     onTake: function(event) {
         const {
-            courseId
+            courseid
         } = event.currentTarget.dataset;
-        api.takeCourse(courseId, (res) => {
+        api.takeCourse(courseid, (res) => {
             this.setData({
                 show: !res
             })
@@ -28,11 +28,13 @@ Page({
      */
     onLoad: function(options) {
         new app.ToastPannel();
-        api.loadCourse(options.query.targetId, (data) => {
+        api.loadCourse(options.courseId, (data) => {
             this.setData({
-                course: data
+                course: data,
+                show: !data.taked
             });
         })
+        
     },
 
     /**

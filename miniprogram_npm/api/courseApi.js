@@ -1,23 +1,9 @@
 import api from './api.js';
 import config from './config.js';
-
+import errorHandler from '../util/errorHandler.js';
 class courseApi {
     constructor() {
         const app = getApp();
-    }
-
-    /**
-     * 处理错误
-     */
-    showError(errorMsg) {
-        if (typeof errorMsg != "string") {
-            console.log(errorMsg);
-            errorMsg = "出错了>_<"
-        }
-        wx.showToast({
-            title: errorMsg,
-            icon: 'none'
-        })
     }
 
     /**
@@ -33,12 +19,12 @@ class courseApi {
                     callback(true);
                 } else {
                     callback(false);
-                    this.showError(res.message);
+                    errorHandler.showException(res.errorCode, res.message);
                 }
             },
             err => {
                 callback(false);
-                this.showError(err);
+                errorHandler.showException(-1, "出错了");
             }
         )
     }
@@ -48,12 +34,15 @@ class courseApi {
     loadCourse(courseId, setData) {
         api.get(`${config.course}${courseId}`, {}).subscribe(
             res => {
-                if (res.errorCode == 0 && res.data != null)
+                if (res.errorCode == 0 && res.data != null) {
                     setData(res.data);
-                else
-                    this.showError(res.message);
+                } else {
+                    errorHandler.showException(res.errorCode, res.message);
+                }
             },
-            err => this.showError(err)
+            err => {
+                errorHandler.showException(-1, "出错了");
+            }
         )
     }
 
@@ -66,10 +55,13 @@ class courseApi {
                 if (res.errorCode == 0 && res.dataList != null) {
                     console.log("Courses:", res);
                     setData(res.dataList)
-                } else
-                    this.showError(res.message);
+                } else {
+                    errorHandler.showException(res.errorCode, res.message);
+                }
             },
-            err => this.showError(err)
+            err => {
+                errorHandler.showException(-1, "出错了");
+            }
         )
     }
     /**
@@ -81,10 +73,13 @@ class courseApi {
                 if (res.errorCode == 0 && res.dataList != null) {
                     console.log("Themes:", res);
                     setData(res.dataList);
-                } else
-                    this.showError(res.message);
+                } else {
+                    errorHandler.showException(res.errorCode, res.message);
+                }
             },
-            err => this.showError(err)
+            err => {
+                errorHandler.showException(-1, "出错了");
+            }
         )
     }
 
@@ -97,10 +92,13 @@ class courseApi {
                 if (res.errorCode == 0 && res.data != null) {
                     console.log(res);
                     setData(res.data);
-                } else
-                    this.showError(res.message);
+                } else {
+                    errorHandler.showException(res.errorCode, res.message);
+                }
             },
-            err => this.showError(err)
+            err => {
+                errorHandler.showException(-1, "出错了");
+            }
         )
     }
 
@@ -110,12 +108,15 @@ class courseApi {
     loadTakedCourses(setData) {
         api.get(config.taked, {}).subscribe(
             res => {
-                if (res.errorCode == 0 && res.dataList != null)
+                if (res.errorCode == 0 && res.dataList != null) {
                     setData(res.dataList);
-                else
-                    this.showError(res.message);
+                } else {
+                    errorHandler.showException(res.errorCode, res.message);
+                }
             },
-            err => this.showError(err)
+            err => {
+                errorHandler.showException(-1, "出错了");
+            }
         )
     }
 

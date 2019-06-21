@@ -1,35 +1,33 @@
 import api from './api.js';
 import config from './config.js';
-
+import errorHandler from '../util/errorHandler.js';
+import errorCode from '../util/errorCode.js';
 class userApi {
     constructor() {}
 
     /**
-     * 处理错误
-     */
-    showError(errorMsg) {
-        if (typeof errorMsg != "string") {
-            console.log(errorMsg);
-            errorMsg = "出错了>_<"
-        }
-        wx.showToast({
-            title: errorMsg,
-            icon: 'none'
-        })
-    }
-    /**
      * 获取用户信息
      */
     getUserInfo(setData) {
-        api.get(`${config.student}`, {}).subscribe(
+        api.get(`${config.student}`, {}).retryWhen(
+            err => {
+                console.log("出错了");
+                console.log(err);
+            }
+        ).subscribe(
             res => {
                 if (res.errorCode == 0 && res.data != null) {
                     console.log("student info:", res);
                     setData(res.data)
-                } else
-                    this.showError(res.message);
+                } else if (res.errorCode == errorCode.USER_NOT_EXIST) {
+                    console.log("还未注册");
+                } else {
+                    errorHandler.showException(res.errorCode, res.message);
+                }
             },
-            err => this.showError(err)
+            err => {
+                errorHandler.showException(-1, "出错了");
+            }
         )
     }
     /**
@@ -48,10 +46,13 @@ class userApi {
                         title: "修改成功！",
                         icon: 'none'
                     })
-                } else
-                    this.showError(res.message);
+                } else {
+                    errorHandler.showException(res.errorCode, res.message);
+                }
             },
-            err => this.showError(err)
+            err => {
+                errorHandler.showException(-1, "出错了");
+            }
         )
     }
     /**
@@ -64,11 +65,12 @@ class userApi {
             res => {
                 if (res.errorCode == 0 && res.data != null) {
                     setData(res.data);
-                } else
-                    this.showError(res.message);
+                } else {
+                    errorHandler.showException(res.errorCode, res.message);
+                }
             },
             err => {
-                this.showError(err);
+                errorHandler.showException(-1, "出错了");
             }
         )
     }

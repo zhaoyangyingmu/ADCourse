@@ -9,15 +9,15 @@ Page({
      * 页面的初始数据
      */
     data: {
-        theme: null,
+        theme: {},
         show: true
     },
     onTake: function(event) {
         const {
             themeId
         } = event.currentTarget.dataset;
-        let count = this.data.courseList.length;
-        this.data.courseList.forEach((course, index, array) => {
+        let count = this.data.theme.courseList.length;
+        this.data.theme.courseList.forEach((course, index, array) => {
             api.takeCourse(course.id, (res) => {
                 if (res) {
                     count--;
@@ -36,6 +36,7 @@ Page({
     onLoad: function(options) {
         new app.ToastPannel();
         api.loadThemeCourses(options.targetId, (res) => {
+            console.log(res);
             this.setData({
                 theme: res
             });

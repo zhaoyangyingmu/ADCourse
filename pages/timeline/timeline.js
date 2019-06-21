@@ -11,10 +11,10 @@ Page({
     data: {},
     navigationTo: function(event) {
         const {
-            sectionId
+            sectionid
         } = event.currentTarget.dataset;
         wx.navigateTo({
-            url: `../chatroom/chatroom?sectionId=${sectionId}`,
+            url: `../chatroom/chatroom?sectionId=${sectionid}`,
         })
     },
     /**
@@ -23,6 +23,7 @@ Page({
     onLoad: function(options) {
         api.loadCourse(options.targetId, (data) => {
             this.setData(data);
+            app.globalData.teacherAvatar = data.teacherAvatar;
         })
     },
 

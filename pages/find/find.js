@@ -82,10 +82,12 @@ Page({
     onNavigateToCourse: function(event) {
         const {
             target,
-            courseId
+            courseid
         } = event.currentTarget.dataset;
+    
+        console.log(courseid);
         wx.navigateTo({
-            url: `${target}?courseId=${courseId}`,
+            url: `${target}?courseId=${courseid}`,
         })
     },
     /**
