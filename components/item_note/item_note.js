@@ -29,7 +29,7 @@ Component({
       let that = this;
       // console.log(that.data);
       wx.navigateTo({
-        url: '/pages/notes/edit_note?url='+that.data.url+"&content="+that.data.content,
+        url: '/pages/notes/edit_note?url='+that.data.url+"&content="+that.data.content+"&add=0",
       });
     }
   }

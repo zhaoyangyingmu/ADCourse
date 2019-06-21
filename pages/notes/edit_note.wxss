@@ -1,13 +1,13 @@
 /* pages/notes/edit_note.wxss */
 
 .panel{
-  width: 600rpx;
-  height: 950rpx;
+  width: 90vw;
   background-color: rgb(250,247,238);
-  display: block;
   padding: 40rpx;
   border-radius: 20rpx;
-  margin: 30rpx auto;
+  margin: 5vh auto;
+  display: flex;
+  flex-direction: column;
 }
 
 
@@ -40,4 +40,14 @@
   margin-top: 20rpx;
   border-radius: 10rpx;
   color: #4a4a4a;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+textarea {
+  flex: 1;
 }

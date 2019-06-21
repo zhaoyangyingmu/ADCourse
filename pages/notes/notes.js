@@ -1,4 +1,9 @@
 // pages/notes/notes.js
+const app = getApp();
+import noteApi from 'api/noteApi.js';
+const noteApiInstance = new noteApi;
+
+
 Page({
 
     /**
@@ -15,7 +20,7 @@ Page({
             section_id: 2,
             importance_degree: 12,
             note_content: "鲁迅的话真对",
-            url: "/section/1"
+            url: "/knowledge/1"
           },
           {
             note_type: "knowledge",
@@ -25,7 +30,7 @@ Page({
             section_id: 2,
             importance_degree: 12,
             note_content: "鲁迅的话真对",
-            url: "/section/2"
+            url: "/knowledge/2"
           },
           {
             note_type: "section",
@@ -44,7 +49,18 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
+      this.getAllNotes();
+    },
 
+    getAllNotes: function() {
+      let data = {
+        "userId": app.globalData.openId
+      }
+      noteApiInstance.getNotes(data, (data)=>{
+        this.setData({
+          notes: data
+        })
+      });
     },
 
     /**
