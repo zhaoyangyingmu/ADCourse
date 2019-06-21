@@ -103,6 +103,8 @@ Page({
 
     addCollection: function(event) {
         //TODO 收藏选中的知识点
+        console.log(event);
+        // 需要知识点的id，和openId
 
         this.hideModal();
     },
