@@ -50,6 +50,10 @@ App({
     },
     globalData: {
         userInfo: null,
+        loginCode: null,
+        version: '1.0.0',
+        host: 'http://47.102.201.65:18081/',
+        ossHost: 'http://47.102.201.65:18081/',
         ColorList: [{
                 title: '嫣红',
                 name: 'red',

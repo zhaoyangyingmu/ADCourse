@@ -1,9 +1,9 @@
 {
     "pages": [
-        "pages/find/find",
         "pages/index/index",
-        "pages/logs/logs",
         "pages/personal/personal",
+        "pages/find/find",
+        "pages/logs/logs",
         "pages/study/study",
         "pages/system/system",
         "pages/course/course",
@@ -13,7 +13,8 @@
         "pages/collections/collections",
         "pages/themecourses/themecourses",
         "pages/notes/edit_note",
-        "pages/timeline/timeline"
+        "pages/timeline/timeline",
+        "pages/personal/editProfile"
     ],
     "usingComponents": {
         "cu-custom": "/colorui/components/cu-custom",

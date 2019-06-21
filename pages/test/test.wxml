@@ -5,20 +5,20 @@
     </cu-custom>
     <view class='page-body'>
         <view class="item-container margin-sm padding" wx:for="{{questionList}}" wx:key="index" wx:for-item="question">
-            <view class='text-black text-bold'>{{index + 1}}. {{question.content}}</view>
+            <view class='text-black text-bold text-lg'>{{index + 1}}. {{question.content}}</view>
             <view wx:if="{{true}}" class='item-content'>
-                <radio-group class='radio-group' bindchange='itemChange'>
+                <radio-group class='radio-group text-df' bindchange='itemChange'>
                     <label class='item-radio {{(option.isCorrect)?"cuIcon-roundcheck text-green":"cuIcon-roundclose text-red"}}' wx:for='{{question.optionList}}' wx:key="index" wx:for-item="option">
                         <radio class="radio" value='{{option.id}}' checked='{{question.answerId==option.id}}' />
                         <text class='text-black'>{{alphaList[index]}} {{option.content}}</text>
                     </label>
                 </radio-group>
-                <view class="item-solution margin-tb-sm">
+                <view class="item-solution margin-tb-sm text-df">
                     <view class='text-orange'>答案解析：</view>
                     <view>{{question.solution}}</view>
                 </view>
             </view>
-            <view wx:if="{{false}}" class='item-content'>
+            <view wx:else class='item-content'>
                 <radio-group class='radio-group' bindchange='itemChange'>
                     <label class='item-radio' wx:for='{{question.optionList}}' wx:key="index" wx:for-item="option">
                         <radio class="radio" value='{{option.id}}' />
@@ -28,7 +28,7 @@
             </view>
         </view>
         <view class="padding flex flex-direction">
-            <button class="cu-btn bg-theme round margin-tb-sm lg">提交答案</button>
+            <button class="cu-btn bg-theme  margin-tb-sm lg">提交答案</button>
         </view>
     </view>
 </view>

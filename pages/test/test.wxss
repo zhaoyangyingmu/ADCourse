@@ -11,6 +11,7 @@
 
 .item-radio {
     display: block;
+    margin: 25rpx 0;
 }
 
 .radio {
@@ -24,5 +25,4 @@
     line-height: 1.6;
     background-color: #f1f1f1;
     color: #333;
-    font-size: 0.6rem;
 }

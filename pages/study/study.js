@@ -8,13 +8,8 @@ Page({
      * 页面的初始数据
      */
     data: {
-        courseList: [{
-            id: 1,
-            status: 1,
-            time: '2019-06-12',
-            url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big99008.jpg',
-            target: '../timeline/timeline'
-        }]
+        target:"../timeline/timeline",
+        courseList: []
     },
 
     /**

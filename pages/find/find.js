@@ -1,125 +1,18 @@
 // pages/find/find.js
+import courseApi from 'api/courseApi.js';
 var utils = require("../../utils/util.js");
 var setMessageNumber = utils.setMessageNumber;
-
+const api = new courseApi;
 Page({
     /**
      * 页面的初始数据
      */
     data: {
         cardCur: 0,
-        swiperList: [{
-            id: 0,
-            tag: '精选主题',
-            url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big84000.jpg',
-            target: '../themecourses/themecourses'
-        }, {
-            id: 1,
-            tag: '精选主题',
-            url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big84001.jpg',
-            target: '../themecourses/themecourses'
-        }, {
-            id: 2,
-            tag: '精选主题',
-            url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big39000.jpg',
-            target: '../themecourses/themecourses'
-        }, {
-            id: 3,
-            tag: '精选主题',
-            url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg',
-            target: '../themecourses/themecourses'
-        }, {
-            id: 4,
-            tag: '精选主题',
-            url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big25011.jpg',
-            target: '../themecourses/themecourses'
-        }, {
-            id: 5,
-            tag: '精选主题',
-            url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big21016.jpg',
-            target: '../themecourses/themecourses'
-        }, {
-            id: 6,
-            tag: '精选主题',
-            url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big99008.jpg',
-            target: '../themecourses/themecourses'
-        }],
-        categoryList: [{
-            name: "推荐",
-            courseList: [{
-                id: 0,
-                startTime: '2019-03-12',
-                endTime: '2019-06-12',
-                teacherName: '张健',
-                credits: 2,
-                summary: "折磨生出苦难，苦难又会加剧折磨，凡间这无穷的循环，将由我来终结！",
-                url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big84000.jpg',
-                target: '../course/course'
-            }, {
-                id: 1,
-                startTime: '2019-03-12',
-                endTime: '2019-06-12',
-                teacherName: '张健',
-                credits: 2,
-                summary: "折磨生出苦难，苦难又会加剧折磨，凡间这无穷的循环，将由我来终结！",
-                url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big84001.jpg',
-                target: '../course/course'
-            }, {
-                id: 2,
-                startTime: '2019-03-12',
-                endTime: '2019-06-12',
-                teacherName: '张健',
-                credits: 2,
-                summary: "折磨生出苦难，苦难又会加剧折磨，凡间这无穷的循环，将由我来终结！",
-                url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big39000.jpg',
-                target: '../course/course'
-            }, {
-                id: 3,
-                startTime: '2019-03-12',
-                endTime: '2019-06-12',
-                teacherName: '张健',
-                credits: 2,
-                summary: "折磨生出苦难，苦难又会加剧折磨，凡间这无穷的循环，将由我来终结！",
-                url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg',
-                target: '../course/course'
-            }, {
-                id: 4,
-                startTime: '2019-03-12',
-                endTime: '2019-06-12',
-                teacherName: '张健',
-                credits: 2,
-                summary: "折磨生出苦难，苦难又会加剧折磨，凡间这无穷的循环，将由我来终结！",
-                url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big25011.jpg',
-                target: '../course/course'
-            }, {
-                id: 5,
-                startTime: '2019-03-12',
-                endTime: '2019-06-12',
-                teacherName: '张健',
-                credits: 2,
-                summary: "折磨生出苦难，苦难又会加剧折磨，凡间这无穷的循环，将由我来终结！",
-                url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big21016.jpg',
-                target: '../course/course'
-            }, {
-                id: 6,
-                startTime: '2019-03-12',
-                endTime: '2019-06-12',
-                teacherName: '张健',
-                credits: 2,
-                summary: "折磨生出苦难，苦难又会加剧折磨，凡间这无穷的循环，将由我来终结！",
-                url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big99008.jpg',
-                target: '../course/course'
-            }]
-        }, {
-            name: "互联网",
-            courseList: []
-        }, {
-            name: "生活",
-            courseList: []
-        }, {
-            name: "自我",
-            courseList: []
-        }]
+        themeTarget: '../themecourses/themecourses',
+        courseTarget: '../course/course',
+        themeList: [],
+        categoryList: []
     },
     DotStyle(e) {
         this.setData({
@@ -186,12 +79,13 @@ Page({
             })
         }
     },
-    onNavigateTo: function(event) {
+    onNavigateToCourse: function(event) {
         const {
-            target
+            target,
+            courseId
         } = event.currentTarget.dataset;
         wx.navigateTo({
-            url: `${target}`,
+            url: `${target}?courseId=${courseId}`,
         })
     },
     /**
@@ -199,56 +93,18 @@ Page({
      */
     onLoad: function(options) {
         setMessageNumber();
-        this.towerSwiper('swiperList');
+        this.towerSwiper('themeList');
         // 初始化towerSwiper 传已有的数组名即可
-    },
-
-    /**
-     * 生命周期函数--监听页面初次渲染完成
-     */
-    onReady: function() {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面显示
-     */
-    onShow: function() {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面隐藏
-     */
-    onHide: function() {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面卸载
-     */
-    onUnload: function() {
-
-    },
-
-    /**
-     * 页面相关事件处理函数--监听用户下拉动作
-     */
-    onPullDownRefresh: function() {
-
-    },
-
-    /**
-     * 页面上拉触底事件的处理函数
-     */
-    onReachBottom: function() {
-
-    },
-
-    /**
-     * 用户点击右上角分享
-     */
-    onShareAppMessage: function() {
-
+        var that = this;
+        api.loadCourses((dataList) => {
+            that.setData({
+                categoryList: dataList
+            })
+        })
+        api.loadThemes((dataList) => {
+            that.setData({
+                themeList: dataList
+            })
+        })
     }
 })

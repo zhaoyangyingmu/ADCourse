@@ -12,8 +12,8 @@
                         <view class='profile-name'>{{name}}</view>
                         <text class='profile-id'>学号：{{id}}</text>
                     </view>
-                    <view class="cu-avatar round lg margin-left" style='background-image:url({{avatar}});'>
-                        <view class="cu-tag badge {{gender!='male'?'cuIcon-female bg-pink':'cuIcon-male bg-blue'}}"></view>
+                    <view class="cu-avatar round lg margin-left" style='background-image:url({{avatar}});' bindtap='navigateToEdit'>
+                        <view class="cu-tag badge {{gender!='男'?'cuIcon-female bg-pink':'cuIcon-male bg-blue'}}"></view>
                     </view>
                 </view>
                 <!-- 学习分析 -->

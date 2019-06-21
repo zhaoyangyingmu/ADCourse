@@ -4,6 +4,6 @@
         <view slot="content" class="text-bold text-xl">我的课程</view>
     </cu-custom>
     <view class="page-body">
-        <item-to-learning wx:for="{{courseList}}" wx:key="id" url="{{item.url}}" status="{{item.status}}" time="{{item.time}}" target="{{item.target}}"></item-to-learning>
+        <item-to-learning wx:for="{{courseList}}" wx:key="id" url="{{item.imageSrc}}" status="{{item.status}}"  target="{{target}}" targetId="{{item.id}}"></item-to-learning>
     </view>
 </view>

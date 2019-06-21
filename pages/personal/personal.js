@@ -1,7 +1,7 @@
 // pages/personal/personal.js
-import rxwx, {
-    Rx
-} from 'rxjs-wx';
+import userApi from 'api/userApi.js';
+
+const app = getApp();
 
 Page({
 
@@ -9,16 +9,16 @@ Page({
      * 页面的初始数据
      */
     data: {
-        name: 'Dark Young',
+        name: '无',
         id: '无',
-        avatar: '../../static/images/avatar.jpg',
-        gender: 'female',
+        avatar: '/static/images/avatar.jpg',
+        gender: '男',
         analysis: [{
-            value: '10',
+            value: '0',
             unit: '分',
             title: '累计学分'
         }, {
-            value: '3',
+            value: '0',
             unit: '门',
             title: '参与课程'
         }],
@@ -32,70 +32,37 @@ Page({
             'target': '../collections/collections'
         }]
     },
-    getStudentInfo: function() {
-       //TODO
-    },
     navigateToTarget: function(event) {
         let target = event.currentTarget.dataset.target;
-        console.log(target);
         wx.navigateTo({
             url: `../${target}/${target}`
         })
     },
-
+    navigateToEdit:function(event){
+        wx.navigateTo({
+            url: './editProfile',
+        })
+    },
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function(options) {
-        this.getStudentInfo();
-    },
-
-    /**
-     * 生命周期函数--监听页面初次渲染完成
-     */
-    onReady: function() {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面显示
-     */
-    onShow: function() {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面隐藏
-     */
-    onHide: function() {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面卸载
-     */
-    onUnload: function() {
-
-    },
-
-    /**
-     * 页面相关事件处理函数--监听用户下拉动作
-     */
-    onPullDownRefresh: function() {
-
-    },
-
-    /**
-     * 页面上拉触底事件的处理函数
-     */
-    onReachBottom: function() {
-
-    },
-
-    /**
-     * 用户点击右上角分享
-     */
-    onShareAppMessage: function() {
-
+        const api = new userApi;
+        let studentInfo = api.getUserInfo();
+        this.setData({
+            name: studentInfo.name,
+            id: studentInfo.openId,
+            gender: studentInfo.sex,
+            avatar: app.globalData.userInfo.avatarUrl,
+            analysis: [{
+                value: studentInfo.revisedCredits,
+                unit: '分',
+                title: '累计学分'
+            }, {
+                value: studentInfo.courses,
+                unit: '门',
+                title: '参与课程'
+            }]
+        })
     }
 })
