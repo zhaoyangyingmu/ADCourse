@@ -2,6 +2,8 @@ import api from './api.js';
 import config from './config.js';
 import errorHandler from '../util/errorHandler.js';
 import errorCode from '../util/errorCode.js';
+const app = getApp();
+
 class userApi {
     constructor() {}
 
@@ -9,18 +11,16 @@ class userApi {
      * 获取用户信息
      */
     getUserInfo(setData) {
-        api.get(`${config.student}`, {}).retryWhen(
-            err => {
-                console.log("出错了");
-                console.log(err);
-            }
-        ).subscribe(
+        wx.showToast({
+            title: app.globalData.openId,
+            icon: 'none'
+        })
+        api.get(`${config.student}`, {}).subscribe(
             res => {
                 if (res.errorCode == 0 && res.data != null) {
-                    console.log("student info:", res);
                     setData(res.data)
                 } else if (res.errorCode == errorCode.USER_NOT_EXIST) {
-                    console.log("还未注册");
+                    this.modifyUserInfo(app.globalData.openId, app.globalData.openId, app.globalData.openId, "男");
                 } else {
                     errorHandler.showException(res.errorCode, res.message);
                 }
@@ -43,7 +43,7 @@ class userApi {
             res => {
                 if (res.errorCode == 0) {
                     wx.showToast({
-                        title: "修改成功！",
+                        title: "成功！",
                         icon: 'none'
                     })
                 } else {

@@ -4,10 +4,10 @@
         <view slot="content">学习进度</view>
     </cu-custom>
     <view id='timeline-container' class='page-body'>
-        <view class='cu-timeline' wx:for="{{chapterList}}" wx:key="index" wx:for-item="chapter">
-            <view class='cu-time'>{{chapter.name}}</view>
-            <view class='cu-item cuIcon-activity  {{section.id==latestSectionId?"text-green":"text-yellow light"}}' wx:for="{{chapter.sectionList}}" wx:key="index" wx:for-item="section" bindtap='navigationTo' data-sectionId='{{section.id}}'>
-                <view class="content {{section.id==latestSectionId?'bg-green shadow-blur':''}}">
+        <view class='cu-timeline'  wx:for="{{course.chapterList}}" wx:key="idx" wx:for-index="idx" wx:for-item="chapter">
+            <view class='cu-time' wx:if="{{idx<chapterNum}}">{{chapter.name}}</view>
+            <view class='cu-item cuIcon-activity  {{section.id==course.lastestSectionId?"text-green":"text-yellow light"}}' wx:if="{{index<sectionNum}}" wx:for="{{chapter.sectionList}}" wx:key="index" wx:for-item="section" bindtap='navigationTo' data-sectionId='{{section.id}}'>
+                <view  class="content {{section.id==course.lastestSectionId?'bg-green shadow-blur':''}}">
                     <view>
                         <text>【{{section.name}}】</text> {{section.summary}}
                     </view>

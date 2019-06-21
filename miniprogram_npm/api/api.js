@@ -16,7 +16,7 @@ const request = (url, options) => {
             data: options.method === 'GET' ? options.data : JSON.stringify(options.data),
             header: {
                 'Content-Type': 'application/json;charset=UTF-8',
-                'openID': `${app.globalData.openId}`
+                'openId': `${app.globalData.openId}`
             },
             success: (res => {
                 if (res.statusCode === 200) {

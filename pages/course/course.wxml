@@ -8,9 +8,7 @@
         <view class='head-container padding-lg' style="background:url({{course.imageSrc}}) no-repeat center center;">
             <view class="head-content cu-list margin-lg">
                 <view class="cu-item">
-                    <view class="cu-avatar round">
-                        <text>{{course.teacherName[0]}}</text>
-                    </view>
+                    <view class="cu-avatar round" style='background-image:url({{course.teacherAvatar}});'> </view>
                     <view class="content flex-sub margin-top-lg">
                         <view class="text-orange text-bold">主讲讲师：{{course.teacherName}}</view>
                         <view class="text-white text-sm flex">开课时间：{{course.startTime}}</view>

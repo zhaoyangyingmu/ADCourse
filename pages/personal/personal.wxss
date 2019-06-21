@@ -22,9 +22,10 @@
     border-bottom: 2rpx solid #f7f7f6;
 }
 
-.profile-detail{
+.profile-detail {
     max-width: 60%;
 }
+
 .profile-name {
     font-size: 1.5rem;
     font-style: bolder;
@@ -36,8 +37,14 @@
 }
 
 .profile-id {
+    display: inline-block;
+    width: 200rpx;
     font-size: 0.8rem;
     color: #eee;
+    line-height: 1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .profile-avatar {

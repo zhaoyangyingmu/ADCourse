@@ -84,7 +84,7 @@ Page({
             target,
             courseid
         } = event.currentTarget.dataset;
-    
+
         console.log(courseid);
         wx.navigateTo({
             url: `${target}?courseId=${courseid}`,
@@ -97,6 +97,8 @@ Page({
         setMessageNumber();
         this.towerSwiper('themeList');
         // 初始化towerSwiper 传已有的数组名即可
+    },
+    onShow: function() {
         var that = this;
         api.loadCourses((dataList) => {
             console.log(dataList);

@@ -8,7 +8,11 @@ Page({
     /**
      * 页面的初始数据
      */
-    data: {},
+    data: {
+        course: {},
+        sectionNum: 1,
+        chapterNum: 1
+    },
     navigationTo: function(event) {
         const {
             sectionid
@@ -22,7 +26,39 @@ Page({
      */
     onLoad: function(options) {
         api.loadCourse(options.targetId, (data) => {
-            this.setData(data);
+            console.log(data);
+            let cNum = 1;
+            let sNum = 1;
+            //更新最新可学习小节
+            if (data.lastestSectionId <= 0) {
+                data.lastestSectionId = data.chapterList[0].sectionList[0].id;
+            } else {
+                var temp = data;
+                var lastSectionId = null;
+                var forAble = true;
+                data.chapterList.forEach((chapter, index1, array1) => {
+                    chapter.sectionList.forEach((section, index2, array2) => {
+                        if (lastSectionId != null && forAble) {
+                            data.lastestSectionId = section.id;
+                            forAble = false;
+                        }
+                        if (section.id == temp.lastestSectionId && forAble) {
+                            lastSectionId = section.id;
+                        }
+                        if (forAble) {
+                            sNum++;
+                        }
+                    })
+                    if (forAble)
+                        cNum++;
+                })
+            }
+            console.log(data, cNum, " ", sNum)
+            this.setData({
+                course: data,
+                sectionNum: sNum,
+                chapterNum: cNum
+            });
             app.globalData.teacherAvatar = data.teacherAvatar;
         })
     },

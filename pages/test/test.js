@@ -61,7 +61,7 @@ Page({
                 chapterId: data.chapterId,
                 sectionId: data.sectionId,
                 questionList: data.questionList,
-                tested: questionList[0][answerId] > 0
+                tested: data.questionList[0][answerId] > 0
             })
         })
     }

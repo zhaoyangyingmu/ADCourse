@@ -12,7 +12,7 @@ Page({
         target: "../timeline/timeline",
         courseList: []
     },
-    navigateToFind:function(e){
+    navigateToFind: function(e) {
         wx.switchTab({
             url: '/pages/find/find'
         })
@@ -21,11 +21,7 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function(options) {
-        api.loadTakedCourses((dataList) => {
-            this.setData({
-                courseList: dataList
-            })
-        })
+
     },
 
     /**
@@ -39,7 +35,11 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function() {
-
+        api.loadTakedCourses((dataList) => {
+            this.setData({
+                courseList: dataList
+            })
+        })
     },
 
     /**

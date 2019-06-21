@@ -10,7 +10,7 @@ Page({
      */
     data: {
         name: '',
-        id: '无',
+        openId: '',
         email: '',
         gender: '男',
     },
@@ -23,12 +23,16 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function(options) {
-        let studentInfo = api.getUserInfo();
-        this.setData({
-            name: studentInfo.name,
-            id: studentInfo.openId,
-            gender: studentInfo.sex,
-            email: studentInfo.email
-        })
+
+    },
+    onShow: function() {
+        api.getUserInfo((res) => {
+            this.setData({
+                name: res.name,
+                openId: res.openId,
+                gender: res.sex,
+                email: res.email
+            })
+        });
     }
 })

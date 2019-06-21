@@ -1,6 +1,6 @@
 // pages/personal/personal.js
 import userApi from 'api/userApi.js';
-
+const api = new userApi;
 const app = getApp();
 
 Page({
@@ -10,7 +10,7 @@ Page({
      */
     data: {
         name: '无',
-        id: '无',
+        id: '',
         avatar: '/static/images/avatar.jpg',
         gender: '男',
         analysis: [{
@@ -48,25 +48,32 @@ Page({
      */
     onLoad: function(options) {
         //获取本地存储的openid
-        wx.getStorage({
-            key: 'openId',
-            success: res => {
-                console.log("openId:", res.data);
-            },
-            fail: err => {
-                wx.login({
-                    success: function(res) {
-                        api.getOpenId(res.code, (res) => {
-                            app.globalData.openId = res.openId;
-                            wx.setStorage({
-                                key: 'openId',
-                                data: res.openId
-                            })
-                        });
-                    }
-                })
-            }
-        })
+        // wx.getStorage({
+        //     key: 'openId',
+        //     success: res => {
+        //         app.globalData.openId = res.data;
+        //     },
+        //     fail: err => {
+        var that = this;
+        if (app.globalData.openId == null || app.globalData.openId == "") {
+            wx.login({
+                success: function(res) {
+                    api.getOpenId(res.code, (res) => {
+                        app.globalData.openId = res.openId;
+                        that.setData({
+                            id: res.openId
+                        })
+                        // wx.setStorage({
+                        // key: 'openId',
+                        // data: res.openId
+                        // })
+                    });
+                }
+            })
+        }
+
+        //     }
+        // })
 
         if (app.globalData.userInfo) {
             this.setData({
@@ -95,24 +102,30 @@ Page({
             })
         }
     },
-    onReady: function() {
+    onShow: function() {
         //api请求
-        const api = new userApi;
         api.getUserInfo((data) => {
-            this.setData({
-                name: data.name,
-                id: data.openId,
-                gender: data.sex,
-                analysis: [{
-                    value: data.revisedCredits,
-                    unit: '分',
-                    title: '累计学分'
-                }, {
-                    value: data.courses,
-                    unit: '门',
-                    title: '参与课程'
-                }]
-            });
+            console.log(app.globalData.openId);
+            console.log(data);
+            if (data == null) {
+                this.setData({
+                    id: app.globalData.openId
+                })
+            } else
+                this.setData({
+                    name: data.name,
+                    id: data.openId,
+                    gender: data.sex,
+                    analysis: [{
+                        value: data.revisedCredits,
+                        unit: '分',
+                        title: '累计学分'
+                    }, {
+                        value: data.courses,
+                        unit: '门',
+                        title: '参与课程'
+                    }]
+                });
         });
     }
 })

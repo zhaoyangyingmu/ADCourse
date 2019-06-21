@@ -8,7 +8,7 @@
         <form bindsubmit="modifyForm">
             <view class='cu-form-group margin-top'>
                 <view class='title'>学号</view>
-                <input name="openId" disabled='true' value='{{id}}'></input>
+                <input name="openId" disabled='true' value='{{openId}}'></input>
             </view>
             <view class="cu-form-group margin-top">
                 <view class="title">昵称</view>
@@ -16,7 +16,7 @@
             </view>
             <view class="cu-form-group margin-top">
                 <view class="title">邮箱</view>
-                <input name="eamil" placeholder="个人邮箱" value='{{email}}'></input>
+                <input name="email" placeholder="个人邮箱" value='{{email}}'></input>
             </view>
             <view class="cu-form-group margin-top">
                 <view class="title">性别</view>
