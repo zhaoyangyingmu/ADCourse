@@ -27,7 +27,8 @@
         "item_knowledge": "/components/item_knowledge/item_knowledge",
         "item_message": "/components/item_message/item_message",
         "item_note": "/components/item_note/item_note",
-        "item_section": "/components/item_section/item_section"
+        "item_section": "/components/item_section/item_section",
+        "item_collection": "/components/item_collection/item_collection"
     },
     "window": {
         "navigationBarBackgroundColor": "#39b54a",

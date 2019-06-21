@@ -41,7 +41,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 9,
+			"current": 10,
 			"list": [
 				{
 					"id": 0,
@@ -110,6 +110,13 @@
 					"id": -1,
 					"name": "小节测试",
 					"pathName": "pages/test/test",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "收藏",
+					"pathName": "pages/collections/collections",
 					"scene": null
 				}
 			]

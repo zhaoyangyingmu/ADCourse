@@ -1,8 +1,8 @@
 /* pages/components/item_section/item_section.wxss */
 
 .item_section {
-  width: 530rpx;
-  height: 850rpx;
+  width: 80vw;
+  height: 75vh;
   background-color: rgb(250,247,238);
   margin: 50rpx 30rpx;
   display: inline-block;

@@ -4,8 +4,8 @@
   flex-direction: row;
   flex-wrap: nowrap;
   white-space: nowrap;
-  width: 650rpx;
-  height: 1100rpx;
+  width: 90vw;
+  height: 90vh;
   margin: auto;
 }
 
