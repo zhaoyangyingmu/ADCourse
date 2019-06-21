@@ -1,22 +1,39 @@
 //index.js
-//获取应用实例
-const app = getApp()
+import userApi from 'api/userApi.js';
 
+const app = getApp();
+const api = new userApi;
 Page({
     data: {
-        motto: 'Hello World',
         userInfo: {},
         hasUserInfo: false,
         canIUse: wx.canIUse('button.open-type.getUserInfo')
     },
     onLoad: function() {
+        wx.getStorage({
+            key: 'openId',
+            success: res => {
+                console.log("openId:", res.data);
+            },
+            fail: err => {
+                wx.login({
+                    success: function(res) {
+                        api.getOpenId(res.code, (res) => {
+                            app.globalData.openId = res.openId;
+                            wx.setStorage({
+                                key: 'openId',
+                                data: res.openId
+                            })
+                        });
+                    }
+                })
+            }
+        })
+
         if (app.globalData.userInfo) {
             this.setData({
                 userInfo: app.globalData.userInfo,
                 hasUserInfo: true
-            })
-            wx.reLaunch({
-                url: '../personal/personal'
             })
         } else if (this.data.canIUse) {
             // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
@@ -25,9 +42,6 @@ Page({
                 this.setData({
                     userInfo: res.userInfo,
                     hasUserInfo: true
-                }) 
-                wx.reLaunch({
-                    url: '../personal/personal'
                 })
             }
         } else {
@@ -39,19 +53,17 @@ Page({
                         userInfo: res.userInfo,
                         hasUserInfo: true
                     })
-                    wx.reLaunch({
-                        url: '../personal/personal'
-                    })
                 }
             })
         }
-    },
-    getUserInfo: function(e) {
-        console.log(e)
-        app.globalData.userInfo = e.detail.userInfo
         this.setData({
-            userInfo: e.detail.userInfo,
-            hasUserInfo: true
+            userInfo: app.globalData.userInfo
+        })
+    },
+    navigateToIndex: function(e) {
+        console.log("nav");
+        wx.redirectTo({
+            url: '../personal/personal'
         })
     }
 })

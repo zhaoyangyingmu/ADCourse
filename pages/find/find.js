@@ -97,6 +97,7 @@ Page({
         // 初始化towerSwiper 传已有的数组名即可
         var that = this;
         api.loadCourses((dataList) => {
+            console.log(dataList);
             that.setData({
                 categoryList: dataList
             })

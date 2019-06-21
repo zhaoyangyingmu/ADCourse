@@ -1,5 +1,7 @@
 // pages/course/course.js
+import courseApi from 'api/courseApi.js';
 const app = getApp();
+const api = new courseApi;
 
 Page({
 
@@ -7,94 +9,30 @@ Page({
      * 页面的初始数据
      */
     data: {
-        course: {
-            "id": 123,
-            "name": "高级Web",
-            "summary": "永远做不完的作业",
-            "teacherId": "dfasdfe",
-            "teacherName": "名称",
-            "startTime": "2019-03-12",
-            "endTime": "2019-06-18",
-            "imageSrc": "https://ossweb-img.qq.com/images/lol/web201310/skin/big99008.jpg",
-            "credit": 3,
-            "type": "互联网",
-            "themeId": 1,
-            "orderNumber": 1,
-            "taked": false,
-            "latestSectionId": -1,
-            "chapterList": [{
-                    "id": 1,
-                    "name": "第一章",
-                    "summary": "简介",
-                    "orderNumber": 1,
-                    "courseId": 123,
-                    "sectionList": [{
-                            "id": 1,
-                            "name": "第一节",
-                            "summary": "简介",
-                            "orderNumber": 1,
-                            "chapterId": 1
-                        },
-                        {
-                            "id": 3,
-                            "name": "第二节",
-                            "summary": "简介",
-                            "orderNumber": 2,
-                            "chapterId": 1
-                        },
-                        {
-                            "id": 2,
-                            "name": "第三节",
-                            "summary": "简介",
-                            "orderNumber": 3,
-                            "chapterId": 1
-                        },
-                    ]
-                },
-                {
-                    "id": 2,
-                    "name": "第二章",
-                    "summary": "简介",
-                    "orderNumber": 1,
-                    "courseId": 123,
-                    "sectionList": [{
-                            "id": 4,
-                            "name": "第一节",
-                            "summary": "简介",
-                            "orderNumber": 1,
-                            "chapterId": 1
-                        },
-                        {
-                            "id": 5,
-                            "name": "第二节",
-                            "summary": "简介",
-                            "orderNumber": 2,
-                            "chapterId": 1
-                        },
-                        {
-                            "id": 6,
-                            "name": "第三节",
-                            "summary": "简介",
-                            "orderNumber": 3,
-                            "chapterId": 1
-                        },
-                    ]
-                },
-            ]
-        }
+        course: null,
+        show: true
     },
 
     onTake: function(event) {
         const {
             courseId
         } = event.currentTarget.dataset;
-        this.show("选课成功");
+        api.takeCourse(courseId, (res) => {
+            this.setData({
+                show: !res
+            })
+        });
     },
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function(options) {
         new app.ToastPannel();
+        api.loadCourse(options.query.targetId, (data) => {
+            this.setData({
+                course: data
+            });
+        })
     },
 
     /**

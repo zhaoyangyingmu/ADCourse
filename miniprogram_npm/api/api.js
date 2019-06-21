@@ -7,6 +7,8 @@ const app = getApp();
  * 创建reques请求，返回一个Observable对象
  */
 const request = (url, options) => {
+    // 打印请求日志
+    console.log("", options.method, " => ", `${app.globalData.host}${url}`, options.data);
     return Rx.Observable.from(new Promise((resolve, reject) => {
         wx.request({
             url: `${app.globalData.host}${url}`,
@@ -14,7 +16,7 @@ const request = (url, options) => {
             data: options.method === 'GET' ? options.data : JSON.stringify(options.data),
             header: {
                 'Content-Type': 'application/json;charset=UTF-8',
-                'openId': `${app.globalData.userInfo.openId}`
+                'openID': `${app.globalData.openId}`
             },
             success: (res => {
                 if (res.statusCode === 200) {

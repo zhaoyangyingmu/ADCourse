@@ -1,4 +1,8 @@
 // pages/chatroom/chatroom.js
+import courseApi from 'api/courseApi.js';
+const app = getApp();
+const api = new courseApi;
+
 Page({
 
     /**
@@ -143,7 +147,11 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function(options) {
-
+        api.loadKnowledges(options.sectionId, (itemList) => {
+            this.setData({
+                dataList: itemList
+            })
+        })
     },
 
     /**

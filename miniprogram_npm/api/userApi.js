@@ -2,9 +2,7 @@ import api from './api.js';
 import config from './config.js';
 
 class userApi {
-    constructor() {
-        const app = getApp();
-    }
+    constructor() {}
 
     /**
      * 处理错误
@@ -22,17 +20,17 @@ class userApi {
     /**
      * 获取用户信息
      */
-    getUserInfo() {
+    getUserInfo(setData) {
         api.get(`${config.student}`, {}).subscribe(
             res => {
-                if (res.errorCode == 0)
-                    return res.data;
-                else
+                if (res.errorCode == 0 && res.data != null) {
+                    console.log("student info:", res);
+                    setData(res.data)
+                } else
                     this.showError(res.message);
             },
             err => this.showError(err)
         )
-        return {};
     }
     /**
      * 修改用户信息
@@ -54,6 +52,24 @@ class userApi {
                     this.showError(res.message);
             },
             err => this.showError(err)
+        )
+    }
+    /**
+     * 获取openId
+     */
+    getOpenId(code, setData) {
+        api.post(`${config.student}login/code`, {
+            "code": code
+        }).subscribe(
+            res => {
+                if (res.errorCode == 0 && res.data != null) {
+                    setData(res.data);
+                } else
+                    this.showError(res.message);
+            },
+            err => {
+                this.showError(err);
+            }
         )
     }
 }

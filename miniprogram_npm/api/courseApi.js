@@ -19,13 +19,36 @@ class courseApi {
             icon: 'none'
         })
     }
+
+    /**
+     * 选课
+     */
+    takeCourse(courseId, callback) {
+        api.put(`${config.taked}?courseId=${courseId}`, {}).subscribe(
+            res => {
+                if (res.errorCode == 0) {
+                    wx.showToast({
+                        title: '选课成功！',
+                    })
+                    callback(true);
+                } else {
+                    callback(false);
+                    this.showError(res.message);
+                }
+            },
+            err => {
+                callback(false);
+                this.showError(err);
+            }
+        )
+    }
     /**
      * 根据课程id，获取课程详细信息
      */
     loadCourse(courseId, setData) {
-        return api.get(`${config.course}${courseId}`, {}).subscribe(
+        api.get(`${config.course}${courseId}`, {}).subscribe(
             res => {
-                if (res.errorCode == 0)
+                if (res.errorCode == 0 && res.data != null)
                     setData(res.data);
                 else
                     this.showError(res.message);
@@ -40,9 +63,10 @@ class courseApi {
     loadCourses(setData) {
         api.get(config.course, {}).subscribe(
             res => {
-                if (res.errorCode == 0)
+                if (res.errorCode == 0 && res.dataList != null) {
+                    console.log("Courses:", res);
                     setData(res.dataList)
-                else
+                } else
                     this.showError(res.message);
             },
             err => this.showError(err)
@@ -54,9 +78,10 @@ class courseApi {
     loadThemes(setData) {
         api.get(config.theme, {}).subscribe(
             res => {
-                if (res.errorCode == 0)
+                if (res.errorCode == 0 && res.dataList != null) {
+                    console.log("Themes:", res);
                     setData(res.dataList);
-                else
+                } else
                     this.showError(res.message);
             },
             err => this.showError(err)
@@ -66,12 +91,13 @@ class courseApi {
     /**
      * 根据主题id，获取所有子课程
      */
-    loadThemeCourses(themeId) {
+    loadThemeCourses(themeId, setData) {
         return api.get(`${config.theme}${themeId}`, {}).subscribe(
             res => {
-                if (res.errorCode == 0)
+                if (res.errorCode == 0 && res.data != null) {
                     console.log(res);
-                else
+                    setData(res.data);
+                } else
                     this.showError(res.message);
             },
             err => this.showError(err)
@@ -84,7 +110,7 @@ class courseApi {
     loadTakedCourses(setData) {
         api.get(config.taked, {}).subscribe(
             res => {
-                if (res.errorCode == 0)
+                if (res.errorCode == 0 && res.dataList != null)
                     setData(res.dataList);
                 else
                     this.showError(res.message);
@@ -92,6 +118,7 @@ class courseApi {
             err => this.showError(err)
         )
     }
+
 }
 
 export default courseApi
