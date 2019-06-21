@@ -1,4 +1,6 @@
 // pages/collections/collections.js
+var app = getApp();
+
 Page({
 
     /**
@@ -37,7 +39,30 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
+      this.getCollectionData();
+    },
 
+    /**
+     * 获取collecctions数据
+    */
+    getCollectionData: function() {
+      var that = this;
+      wx.request({
+        method: "POST",
+        url: app.globalData.url + 'api/user/collections/get_all', //仅为示例，并非真实的接口地址
+        data: {
+          open_id: "123456"
+        },
+        header: {
+          'content-type': 'application/json;charset=UTF-8'// 默认值
+        },
+        success(res) {
+          console.log(res);
+          that.setData({
+            collections: res.data.data
+          });
+        }
+      });
     },
 
     /**
