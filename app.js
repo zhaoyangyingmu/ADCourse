@@ -50,9 +50,6 @@ App({
     },
     globalData: {
         userInfo: null,
-<<<<<<< HEAD
-        url: "http://47.102.201.65:8080/"
-=======
         loginCode: null,
         version: '1.0.0',
         host: 'http://47.102.201.65:18081/',
@@ -133,6 +130,5 @@ App({
                 color: '#ffffff'
             },
         ]
->>>>>>> 9ba69ef0b15521483e5c6647f10e5149e97e207c
     }
 })
