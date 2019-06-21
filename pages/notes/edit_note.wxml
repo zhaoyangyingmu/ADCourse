@@ -6,8 +6,8 @@
   <view class='panel card-shadow' data-url="{{url}}">
       <form bindsubmit='submit'>
         <view class='text_content'>
-          <textarea name="content" maxlength='700' 
-          value="{{content}}" bindinput='changeContent' placeholder='我的肝真好！'></textarea>
+          <textarea name="content"
+          value="{{content}}" bindinput='changeContent' placeholder='请输入'></textarea>
         </view>
         <view class='submit_button'>
           <text  bindtap='submit'>提交</text>

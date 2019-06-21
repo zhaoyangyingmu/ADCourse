@@ -1,4 +1,9 @@
 // pages/collections/collection_item/collection_item.js
+var app = getApp();
+import chatApi from 'api/chatApi.js';
+import collectionApi from 'api/collectionApi.js';
+const collectionApiInstance = new collectionApi;
+
 Component({
   /**
    * 组件的属性列表
@@ -8,7 +13,7 @@ Component({
       type: Number,
       value: 3
     },
-    id: {
+    knowledge_id: {
       type: Number,
       value: 1
     },
@@ -30,7 +35,17 @@ Component({
    */
   methods: {
     delete_knowledge: function(event) {
-      console.log(event.currentTarget.dataset.id);
+      let knowledge_id = event.currentTarget.dataset.knowledge_id;
+      let data = {
+        "open_id": app.globalData.openId
+      }
+      collectionApiInstance.deleteCollection(knowledge_id, data, (res)=>{
+        if(res) {
+          const pages = getCurrentPages();
+          const lastPage = pages[pages.length - 1];
+          lastPage.onLoad();
+        }
+      })
     }
   }
 })

@@ -1,8 +1,8 @@
 /* pages/components/item_knowledge/item_knowledge.wxss */
 
 .item_knowledge {
-  width: 530rpx;
-  height: 850rpx;
+  width: 80vw;
+  height: 75vh;
   background-color: rgb(250,247,238);
   margin: 50rpx 30rpx;
   display: inline-block;
@@ -19,7 +19,7 @@
 }
 
 .knowledge text:nth-child(1) {
-  font-size: 0.9em;
+  font-size: 1.2em;
   margin-bottom: 30rpx;
   color: rgb(176, 169, 151);
   background-color: rgb(241, 235, 223);
@@ -31,6 +31,7 @@
   padding: 20rpx;
   color: rgb(193,177,161);
   white-space: normal;
+  font-size: 1.1em;
 }
 
 .note {

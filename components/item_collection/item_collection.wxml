@@ -10,7 +10,7 @@
       </view>
     </view>
 
-    <view class='item_button' bindtap='delete_knowledge' data-id="{{id}}">
+    <view class='item_button' bindtap='delete_knowledge' data-knowledge_id="{{knowledge_id}}">
       <view>
       <image src='/static/images/delete.png'></image>
       删除

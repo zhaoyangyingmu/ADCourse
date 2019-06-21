@@ -1,7 +1,9 @@
 // pages/chatroom/chatroom.js
 import chatApi from 'api/chatApi.js';
+import collectionApi from 'api/collectionApi.js';
 const app = getApp();
 const api = new chatApi;
+const collectionApiInstance = new collectionApi;
 
 Page({
 
@@ -30,14 +32,23 @@ Page({
     },
 
     addNote: function(event) {
-        // TODO 对选中的知识点做笔记
-
+        wx.navigateTo({
+          url: "/pages/notes/edit_note?content=&url=/knowledge/" 
+              + event.target.dataset.id +"&add=1",
+        })
         this.hideModal();
     },
 
     addCollection: function(event) {
-        //TODO 收藏选中的知识点
+        let data = {
+          "knowledge_id": event.target.dataset.id,
+          "open_id": app.globalData.openId
+        }
 
+        console.log(data);
+        collectionApiInstance.addCollection(data, (res) => {
+          console.log(res);
+        });
         this.hideModal();
     },
 
