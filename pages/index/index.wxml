@@ -3,15 +3,11 @@
     <cu-custom bgColor="bg-transparent-theme">
         <view slot="content" class="text-bold text-xl">首页</view>
     </cu-custom>
-    <view class="userinfo">
-        <button class='cu-btn bg-theme ' wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 进入课程 </button>
-
-        <block wx:else>
+    <view class='page-body'>
+        <view class="userinfo">
             <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
             <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-            <navigator class='margin-top-lg' url="../personal/personal" hover-class="navigator-hover">
-                <button class='cu-btn bg-theme '>进入课程</button>
-            </navigator>
-        </block>
+            <button class='cu-btn bg-theme margin-top-lg' bindtap='navigateToIndex'>进入课程</button>
+        </view>
     </view>
 </view>

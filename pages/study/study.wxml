@@ -3,7 +3,14 @@
     <cu-custom bgColor="bg-transparent-theme">
         <view slot="content" class="text-bold text-xl">我的课程</view>
     </cu-custom>
-    <view class="page-body">
-        <item-to-learning wx:for="{{courseList}}" wx:key="id" url="{{item.imageSrc}}" status="{{item.status}}"  target="{{target}}" targetId="{{item.id}}"></item-to-learning>
+    <view class="page-body" wx:if="{{courseList.length>0}}">
+        <item-to-learning wx:for="{{courseList}}" wx:key="id" url="{{item.imageSrc}}" status="{{item.status}}" target="{{target}}" targetId="{{item.id}}"></item-to-learning>
+    </view>
+    <view class='page-body' wx:else>
+        <view class='page-empty'>
+            <image class="no-data" src="/static/icon/ic_no_data.png" mode=''></image>
+            <view class='content text-gray'>还未选修任何课程～</view>
+            <button class='cu-btn bg-theme margin-top-lg' bindtap='navigateToFind'>发现课程</button>
+        </view>
     </view>
 </view>

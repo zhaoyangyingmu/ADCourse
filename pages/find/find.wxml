@@ -7,7 +7,7 @@
             <swiper class="card-swiper square-dot" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500" bindchange="cardSwiper" indicator-color="#8799a3" indicator-active-color="#FF9933">
                 <swiper-item wx:for="{{themeList}}" wx:key="index" class="{{cardCur==index?'cur':''}}">
                     <view class="swiper-item">
-                        <item-theme url="{{item.iamgeUrl}}" tag="精选主题" target="{{themeTarget}}" targetId="{{item.id}}"></item-theme>
+                        <item-theme url="{{item.imageUrl}}" tag="精选主题" target="{{themeTarget}}" targetId="{{item.id}}"></item-theme>
                     </view>
                 </swiper-item>
             </swiper>
@@ -15,10 +15,10 @@
         <view>
             <van-tabs animated swipeable color="#FF9933" line-width="25">
                 <van-tab wx:for="{{categoryList}}" wx:key="index" wx:for-item="category" title="{{category.type}}">
-                    <view class="cu-card case {{isCard?'no-card':''}}" bind:tap='onNavigateToCourse' data-target='{{courseTarget}}' data-courseId='{{course.id}}' wx:for="{{category.courseList}}" wx:key="id" wx:for-item="course">
+                    <view class="item-card cu-card case {{isCard?'no-card':''}}" bind:tap='onNavigateToCourse' data-target='{{courseTarget}}' data-courseId='{{course.id}}' wx:for="{{category.courseList}}" wx:key="id" wx:for-item="course">
                         <view class="cu-item shadow">
                             <view class="image">
-                                <image src="{{course.imageSrc}}" mode="widthFix"></image>
+                                <image class='item-card-image' src="{{course.imageSrc}}" mode="aspectFill"></image>
                                 <view class="cu-tag bg-theme">{{course.taked?"已选":"New"}}</view>
                                 <view class="cu-bar bg-shadeBottom">
                                     <text class="text-cut">{{course.summary}}</text>
@@ -26,9 +26,7 @@
                             </view>
                             <view class="cu-list menu-avatar">
                                 <view class="cu-item">
-                                    <view class="cu-avatar round lg">
-                                        <text>{{course.teacherAvatar}}</text>
-                                    </view>
+                                    <view class="cu-avatar round lg" style="background-image:url({{course.teacherAvatar}});"></view>
                                     <view class="content flex-sub">
                                         <view class="text-black text-bold">{{course.teacherName}}</view>
                                         <view class="text-gray text-sm flex justify-between">

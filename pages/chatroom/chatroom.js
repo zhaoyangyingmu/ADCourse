@@ -1,87 +1,21 @@
 // pages/chatroom/chatroom.js
+import chatApi from 'api/chatApi.js';
+const app = getApp();
+const api = new chatApi;
+
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-        "name": "第二节",
-        "order": 1,
-        "knowledge": null,
-        "sectionId": 1,
-        "dataList": [{
-                "id": "12323342",
-                "type": 1,
-                "whoSay": 0,
-                "content": "https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg",
-                "orderNumber": 1,
-                "sectionId": 1,
-                "importanceDegree": 1
-            },
-            {
-                "id": "1232",
-                "type": 0,
-                "whoSay": 1,
-                "content": "这是个好问题",
-                "orderNumber": 2,
-                "sectionId": 1,
-                "importanceDegree": 2
-            },
-            {
-                "id": "1233343",
-                "type": 0,
-                "whoSay": 1,
-                "content": "这是个好问题",
-                "orderNumber": 3,
-                "sectionId": 1,
-                "importanceDegree": 1
-            },
-            {
-                "id": "1233343",
-                "type": 0,
-                "whoSay": 1,
-                "content": "这是个好问题",
-                "orderNumber": 4,
-                "sectionId": 1,
-                "importanceDegree": 1
-            },
-            {
-                "id": "1233343",
-                "type": 0,
-                "whoSay": 1,
-                "content": "这是个好问题",
-                "orderNumber": 5,
-                "sectionId": 1,
-                "importanceDegree": 1
-            },
-            {
-                "id": "1233343",
-                "type": 1,
-                "whoSay": 1,
-                "content": "https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg",
-                "orderNumber": 6,
-                "sectionId": 1,
-                "importanceDegree": 1
-            },
-            {
-                "id": "1233343",
-                "type": 0,
-                "whoSay": 1,
-                "content": "这是个好问题",
-                "orderNumber": 7,
-                "sectionId": 1,
-                "importanceDegree": 1
-            },
-            {
-                "id": "1233343",
-                "type": 0,
-                "whoSay": 0,
-                "content": "这是个好问题",
-                "orderNumber": 8,
-                "sectionId": 1,
-                "importanceDegree": 1
-            }
-        ]
+        name: "第二节",
+        order: 1,
+        knowledge: null,
+        teacherAvatar: "",
+        studentAvatar: "",
+        sectionId: 1,
+        dataList: []
     },
     showModal(e) {
         this.setData({
@@ -145,7 +79,15 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function(options) {
-
+        api.loadKnowledges(options.sectionId, (res) => {
+            this.setData({
+                dataList: res
+            })
+        })
+        this.setData({
+            teacherAvatar: app.globalData.teacherAvatar,
+            studentAvatar: app.globalData.userInfo.avatarUrl
+        })
     },
 
     /**

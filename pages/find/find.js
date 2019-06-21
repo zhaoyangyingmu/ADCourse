@@ -82,10 +82,12 @@ Page({
     onNavigateToCourse: function(event) {
         const {
             target,
-            courseId
+            courseid
         } = event.currentTarget.dataset;
+    
+        console.log(courseid);
         wx.navigateTo({
-            url: `${target}?courseId=${courseId}`,
+            url: `${target}?courseId=${courseid}`,
         })
     },
     /**
@@ -97,6 +99,7 @@ Page({
         // 初始化towerSwiper 传已有的数组名即可
         var that = this;
         api.loadCourses((dataList) => {
+            console.log(dataList);
             that.setData({
                 categoryList: dataList
             })

@@ -1,6 +1,7 @@
 // pages/study/study.js
-
+import courseApi from 'api/courseApi.js';
 const app = getApp();
+const api = new courseApi;
 
 Page({
 
@@ -8,15 +9,23 @@ Page({
      * 页面的初始数据
      */
     data: {
-        target:"../timeline/timeline",
+        target: "../timeline/timeline",
         courseList: []
     },
-
+    navigateToFind:function(e){
+        wx.switchTab({
+            url: '/pages/find/find'
+        })
+    },
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function(options) {
-
+        api.loadTakedCourses((dataList) => {
+            this.setData({
+                courseList: dataList
+            })
+        })
     },
 
     /**

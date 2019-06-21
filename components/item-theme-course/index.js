@@ -24,10 +24,10 @@ Component({
         onNavigateTo: function(event) {
             const {
                 target,
-                targetId
+                targetid
             } = event.currentTarget.dataset;
             wx.navigateTo({
-                url: `${target}?targetId={{targetId}}`,
+                url: `${target}?targetId=${targetid}`,
             })
         }
     }

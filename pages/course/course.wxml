@@ -53,7 +53,7 @@
                 </view>
             </view>
         </view>
-        <view class='foot-container padding-lg'>
+        <view wx:if="{{show}}" class='foot-container padding-lg'>
             <button class="cu-btn block bg-green margin-tb-sm lg" type="" bindtap='onTake' data-courseId='{{course.id}}'>选课</button>
         </view>
     </view>
