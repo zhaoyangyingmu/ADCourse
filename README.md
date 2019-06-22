@@ -63,6 +63,9 @@
         + images                    # 图片
     + utils                         # 其他工具类
     .gitignore                      # 配置需要排除在版本管理控制之外的文件
+    app.js                          # 小程序架构文件，逻辑代码部分
+    app.json                        # 小程序架构文件，公共配置文件
+    app.wxss                        # 小程序架构文件，公共样式表文件
     package.json                    # npm项目配置
     README.md                       # 项目说明
 
@@ -92,6 +95,26 @@ sudo cnpm i -S vant-weapp --production
 
 ### 封装网络请求
 
+使用基于事件的流式处理库 rxjs 封装网络请求
+* 在 `app.js` 中配置请求域名
+* 在 `miniprogram_npm/api` 目录下封装网络请求相关类（放在 miniprogram_npm 目录方便在 page 界面使用相对路径引入）
+* 在 `config.js` 文件中配置每个模块的请求路径
+* 按模块封装网络请求
+
+封装微信标准网络请求接口`wx.request`
+* 使用 `rxjs` 封装 `wx.request`，返回 `Observable`
+    * 将传输类型设置为`application/json;charset=UTF-8`
+    * 头部携带用户`openId`
+    * 将非 `GET` 请求携带的数据转换成 `json` 传输
+    
+* 使用封装好的 `request`，进一步封装四个基本 `HTTP` 请求：`GET`、`POST`、`PUT`、`DELETE`
+
+* 进一步封装每个模块的网络请求
+    * `userApi.js` 负责处理用户登录/注册、获取信息请求，并将返回结果处理回显
+    * `courseApi.js` 负责处理获取课程信息、选课等请求，并将返回结果进行处理并显示
+    * `chatApi.js` 负责处理用户学习相关请求，包括获取知识点、小节测试、更新学习进度等
+    * `collectionApi.js` 负责处理收藏相关请求
+    * `noteApi.js` 负责处理笔记相关请求
 
 ### 登录/注册
 
