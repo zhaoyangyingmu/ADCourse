@@ -54,7 +54,7 @@ App({
         version: '1.0.0',
         appId: 'wx74e4dde03e2bbfdc',
         appSecret: '55e421ac78fb7fcc27898d0f10304783',
-        openId: '123456', // 用于测试
+        openId: '', 
         teacherAvatar: "",
         host: 'http://47.102.201.65:18081/',
         ossHost: 'http://47.102.201.65:18081/',
