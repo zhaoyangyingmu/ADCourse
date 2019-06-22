@@ -1,6 +1,9 @@
 # 高级 Web 技术项目——小程序端
 
 ---
+## 相关图片
+
+<img src="http://fitymistudio.cn/assets/%E4%B8%AA%E4%BA%BA%E4%BF%A1%E6%81%AF1.png" width="30%"/><img src="http://fitymistudio.cn/assets/%E8%AF%BE%E7%A8%8B%E8%AF%A6%E6%83%851.png" width="30%"/><img src="http://fitymistudio.cn/assets/%E6%94%B6%E8%97%8F%E7%9F%A5%E8%AF%86%E7%82%B9.png" width="30%"/>
 
 ## 目录结构
 
