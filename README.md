@@ -1,9 +1,6 @@
-# ADCourse
-
-[DarkYoung](https://github.com/DarkYoung) `16302010059@fudan.edu.cn`
+# 高级 Web 技术项目——小程序端
 
 ---
-
 
 ## 目录结构
 
@@ -116,8 +113,21 @@ sudo cnpm i -S vant-weapp --production
     * `collectionApi.js` 负责处理收藏相关请求
     * `noteApi.js` 负责处理笔记相关请求
 
-### 登录/注册
+### 用户登录/注册
 
+注册过程对用户是无感的。
+
+* 判断全局存储的 `openId` 是否为空（null或''）
+* 若为空，则调用 `wx.login` 进行登录，将获取到的 `res.code` 发送给后端，后端处理请求并返回用户 `openId`
+* 获取用户基本信息并显示，三种方式
+    * 全局存储的 `app.glbalData.userInfo`
+    * 通过 `open-type` 调用 `getUserInfo`
+    * 直接`wx.getUserInfo`
+* 通过封装的 `userApi.js` 请求用户数据
+    * 使用 `openId` 查询数据库数据
+    * 若返回错误码为 `3001`，表示用户不存在，使用 `openId` 进行自动注册
+    * 注册成功，重新请求用户数据
+    * 将返回的用户信息进行渲染显示
 
 ### 学习进度
 
@@ -126,3 +136,4 @@ sudo cnpm i -S vant-weapp --production
 
 
 
+    powdered by [DarkYoung](https://github.com/DarkYoung) `16302010059@fudan.edu.cn`
