@@ -35,9 +35,9 @@
             collectionApi.js  # 封装收藏功能网络请求
             noteApi.js      # 封装笔记功能网络请求
         - util              # 封装工具类
-          errorCode.js      # 错误码
-          UserException.js  # 自定义异常
-          errorHandler.js   # 异常处理工具类
+            errorCode.js      # 错误码
+            UserException.js  # 自定义异常
+            errorHandler.js   # 异常处理工具类
         + vant-weapp        # 第三方组件库
         + rxjs-wx           # 第三方库：为微信小程序封装的rxjs
     - pages                 # 小程序界面
@@ -64,4 +64,38 @@
     README.md               # 项目说明
 
 ```
+
+## 关键功能实现细节
+### 引入第三方库
+
+* 使用 npm 管理第三方库
+
+引入 rx-wx 
+```bash
+sudo cnpm i -S rxjs-wx
+```
+
+引入 vant 组件库
+```bash
+sudo cnpm i -S vant-weapp --production
+```
+
+* 小程序不支持 npm 使用 node_modules 的方式引入第三方库
+* 使用微信开发者工具提供的 npm 工具重新构建项目，生成 miniprogram_npm 目录
+
+由微信开发者工具编译生成的 vant 组件库目录包含版本信息，导致使用时报错（未定义），可手动去除版本信息
+
+
+### 封装网络请求
+
+
+### 登录/注册
+
+
+### 学习进度
+
+
+### 自定义组件
+
+
 
