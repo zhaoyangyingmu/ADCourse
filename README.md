@@ -3,30 +3,11 @@
 ---
 ## 相关图片
 
-<img src="http://fitymistudio.cn/assets/%E4%B8%AA%E4%BA%BA%E4%BF%A1%E6%81%AF1.jpg" width="30%"/><img src="http://fitymistudio.cn/assets/%E8%AF%BE%E7%A8%8B%E8%AF%A6%E6%83%85.jpg" width="30%"/><img src="http://fitymistudio.cn/assets/%E6%94%B6%E8%97%8F%E7%9F%A5%E8%AF%86%E7%82%B9.jpg" width="30%"/>
+<img src="http://fitymistudio.cn/assets/%E4%B8%AA%E4%BA%BA%E4%BF%A1%E6%81%AF1.jpg" width="30%"/><img src="http://fitymistudio.cn/assets/%E8%AF%BE%E7%A8%8B%E8%AF%A6%E6%83%85.jpg" width="30%"/><img src="http://fitymistudio.cn/assets/%E6%94%B6%E8%97%8F%E7%9F%A5%E8%AF%86%E7%82%B9.jpg" width="30%"/><img src="http://fitymistudio.cn/assets/%E6%88%91%E7%9A%84%E6%94%B6%E8%97%8F.jpg" width="30%"/><img src="http://fitymistudio.cn/assets/%E6%88%91%E7%9A%84%E7%AC%94%E8%AE%B0.jpg" width="30%"/>
 
 
 ## 项目相关文档地址
-
-* 小程序：
-    - 项目地址： https://github.com/DarkYoung/ADCourse
-    - 说明文档地址： https://github.com/DarkYoung/ADCourse/blob/master/README.md
-    - 用户手册地址： https://github.com/DarkYoung/ADCourse/blob/master/%E7%94%A8%E6%88%B7%E6%89%8B%E5%86%8C.md
-
-* 小程序后端：
-    - 项目地址：https://github.com/ChenTao98/adWebApi
-    - 说明文档地址：https://github.com/ChenTao98/adWebApi/blob/master/README.md
-    - api接口说明地址（密码：123456）：https://www.showdoc.cc/379113643189792?page_id=2197030605969803
-
-* 教师端：
-    - 项目地址： https://github.com/ChenTao98/adWebBack
-    - 说明文档地址：
-    - 用户手册地址：
-
-## 项目部署
-* 小程序后端访问地址： http://47.102.201.65:18081
-* 教师端访问地址： http://47.102.201.65:18080 
-* 部署文件目录： https://github.com/ChenTao98/adWebBack/tree/master/docker
+[文档地址汇总](https://github.com/zhaoyangyingmu/ADWebDocuments/blob/master/README.md)
 
 ## 目录结构
 
